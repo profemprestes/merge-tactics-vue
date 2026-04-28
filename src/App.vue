@@ -99,7 +99,7 @@ function resetConditions() {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-family: sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 .main-container {
@@ -110,8 +110,6 @@ function resetConditions() {
 
 .sidebar {
   padding: 20px;
-  /* background-color: #f4f4f4; */ /* Remove background to integrate with app background */
-  /* border-bottom: 1px solid #ddd; */ /* Remove border for cleaner look */
 }
 
 .content {
@@ -125,29 +123,28 @@ function resetConditions() {
 }
 
 .generate-button, .reset-button {
-  flex: 1; /* Make buttons take equal width */
-  padding: 12px 20px; /* More padding for better touch targets */
+  flex: 1;
+  padding: 12px 20px;
   border: none;
-  border-radius: 8px; /* Slightly larger border-radius */
+  border-radius: 8px;
   cursor: pointer;
   font-size: 1.1em;
   font-weight: 600;
-  transition: background-color 0.3s ease; /* Smooth transition */
-  outline: none; /* Remove focus outline */
+  transition: all 0.3s ease;
+  outline: none;
+  color: #ffffff;
 }
 
 .generate-button {
-  background-color: #4CAF50; /* A more vibrant green */
-  color: white;
+  background-color: var(--color-accent-green);
 }
 
 .generate-button:hover {
-  background-color: #45a049;
+  filter: brightness(1.1);
 }
 
 .reset-button {
-  background-color: var(--danger-color); /* A clear red for reset */
-  color: white;
+  background-color: var(--danger-color);
 }
 
 .reset-button:hover {
@@ -158,10 +155,10 @@ function resetConditions() {
   display: flex;
   gap: 20px;
   margin-bottom: 20px;
-  background-color: #f9f9f9;
+  background-color: var(--color-purple-dark);
   padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #eee;
+  border-radius: 8px;
+  border: 1px solid var(--color-purple-light);
 }
 
 .min-skill-count-setting, .team-size-setting {
@@ -177,23 +174,29 @@ function resetConditions() {
 .min-skill-count-setting input, .team-size-setting input {
   width: 60px;
   padding: 8px;
-  border: 1px solid #ccc;
+  background-color: var(--color-purple-deep);
+  color: #ffffff;
+  border: 1px solid var(--color-neutral);
   border-radius: 4px;
   text-align: center;
+}
+
+.min-skill-count-setting input:focus, .team-size-setting input:focus {
+  outline: none;
+  border-color: var(--color-purple-light);
 }
 
 .selected-items-display {
   margin-bottom: 20px;
   padding: 15px;
-  background-color: #f9f9f9;
-  border: 1px solid #eee;
-  border-radius: 5px;
+  background-color: var(--color-purple-dark);
+  border: 1px solid var(--color-neutral);
+  border-radius: 8px;
 }
 
 .selected-items-display h4 {
   margin-top: 0;
   margin-bottom: 10px;
-  color: #333;
   font-size: 1em;
 }
 
@@ -212,12 +215,12 @@ function resetConditions() {
 }
 
 .item-tag.include {
-  background-color: #e8f5e9; /* Light green */
-  color: #2e7d32; /* Dark green */
+  background-color: var(--color-accent-green);
+  color: #ffffff;
 }
 
 .item-tag.exclude {
-  background-color: #ffebee; /* Light red */
-  color: #c62828; /* Dark red */
+  background-color: var(--color-accent-orange);
+  color: #ffffff;
 }
 </style>

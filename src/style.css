@@ -3,86 +3,130 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: #333;
-  background-color: #f8f8f8; /* Light gray background */
+  color-scheme: dark light;
+  
+  /* Merge Tactics GG - Paleta de colores */
+  --color-purple-deep: #311f5e;
+  --color-purple-dark: #54416d;
+  --color-purple-base: #7a2ec0;
+  --color-purple-light: #9138e3;
+  --color-accent-magenta: #ac4699;
+  --color-accent-gold: #efc149;
+  --color-accent-orange: #cb772e;
+  --color-accent-green: #44a850;
+  --color-neutral: #b2aeb3;
+
+  /* Global variables */
+  --primary-color: var(--color-purple-base);
+  --primary-color-hover: var(--color-purple-light);
+  --danger-color: var(--color-accent-orange);
+  --danger-color-hover: #a85f20;
+  
+  color: #ffffff;
+  background-color: var(--color-purple-deep);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --primary-color: #66BB6A;
-  --primary-color-hover: #5CB85C;
-  --danger-color: #EF5350;
-  --danger-color-hover: #E53935;
+  /* Skill Role Colors mapping from old traits to new palette */
+  /* Noble -> Gold */
+  --color-Noble: var(--color-accent-gold);
+  --color-Noble-rgb: 239, 193, 73;
+  --color-Noble-transparent: rgba(var(--color-Noble-rgb), 0.3);
 
-  /* Skill Role Colors mapping from old traits where possible or new colors */
-  --color-Noble: #FFD700; /* Gold */
-  --color-Noble-rgb: 255, 215, 0;
-  --color-Noble-transparent: rgba(255, 215, 0, 0.3);
-  --color-Tank: #F0E68C; /* Khaki */
-  --color-Tank-rgb: 240, 230, 140;
-  --color-Tank-transparent: rgba(240, 230, 140, 0.3);
-  --color-Clan: #1E90FF; /* DodgerBlue */
-  --color-Clan-rgb: 30, 144, 255;
-  --color-Clan-transparent: rgba(30, 144, 255, 0.3);
-  --color-Marksman: #7FFFD4; /* Aquamarine */
-  --color-Marksman-rgb: 127, 255, 212;
-  --color-Marksman-transparent: rgba(127, 255, 212, 0.3);
-  --color-Goblin: #8BC34A; /* Light Green */
-  --color-Goblin-rgb: 139, 195, 74;
-  --color-Goblin-transparent: rgba(139, 195, 74, 0.3);
-  --color-Assassin: #DC143C; /* Crimson */
-  --color-Assassin-rgb: 220, 20, 60;
-  --color-Assassin-transparent: rgba(220, 20, 60, 0.3);
-  --color-Undead: #008080; /* Teal */
-  --color-Undead-rgb: 0, 128, 128;
-  --color-Undead-transparent: rgba(0, 128, 128, 0.3);
-  --color-Warrior: #FFA500; /* Orange */
-  --color-Warrior-rgb: 255, 165, 0;
-  --color-Warrior-transparent: rgba(255, 165, 0, 0.3);
-  --color-Fire: #FF4500; /* OrangeRed */
-  --color-Fire-rgb: 255, 69, 0;
-  --color-Fire-transparent: rgba(255, 69, 0, 0.3);
-  --color-Ace: #800080; /* Purple */
-  --color-Ace-rgb: 128, 0, 128;
-  --color-Ace-transparent: rgba(128, 0, 128, 0.3);
-  --color-Hinder: #8B4513; /* SaddleBrown */
-  --color-Hinder-rgb: 139, 69, 19;
-  --color-Hinder-transparent: rgba(139, 69, 19, 0.3);
-  --color-Titan: #2E8B57; /* SeaGreen */
-  --color-Titan-rgb: 46, 139, 87;
-  --color-Titan-transparent: rgba(46, 139, 87, 0.3);
-  --color-Superstar: #FF69B4; /* HotPink */
-  --color-Superstar-rgb: 255, 105, 180;
-  --color-Superstar-transparent: rgba(255, 105, 180, 0.3);
-  --color-Dragon: #B22222; /* FireBrick */
-  --color-Dragon-rgb: 178, 34, 34;
-  --color-Dragon-transparent: rgba(178, 34, 34, 0.3);
-  --color-Building: #A9A9A9; /* DarkGray */
-  --color-Building-rgb: 169, 169, 169;
-  --color-Building-transparent: rgba(169, 169, 169, 0.3);
+  /* Tank -> Green */
+  --color-Tank: var(--color-accent-green);
+  --color-Tank-rgb: 68, 168, 80;
+  --color-Tank-transparent: rgba(var(--color-Tank-rgb), 0.3);
+
+  /* Clan -> Base Purple */
+  --color-Clan: var(--color-purple-base);
+  --color-Clan-rgb: 122, 46, 192;
+  --color-Clan-transparent: rgba(var(--color-Clan-rgb), 0.3);
+
+  /* Marksman -> Orange */
+  --color-Marksman: var(--color-accent-orange);
+  --color-Marksman-rgb: 203, 119, 46;
+  --color-Marksman-transparent: rgba(var(--color-Marksman-rgb), 0.3);
+
+  /* Goblin -> Green */
+  --color-Goblin: var(--color-accent-green);
+  --color-Goblin-rgb: 68, 168, 80;
+  --color-Goblin-transparent: rgba(var(--color-Goblin-rgb), 0.3);
+
+  /* Assassin -> Magenta */
+  --color-Assassin: var(--color-accent-magenta);
+  --color-Assassin-rgb: 172, 70, 153;
+  --color-Assassin-transparent: rgba(var(--color-Assassin-rgb), 0.3);
+
+  /* Undead -> Dark Purple */
+  --color-Undead: var(--color-purple-dark);
+  --color-Undead-rgb: 84, 65, 109;
+  --color-Undead-transparent: rgba(var(--color-Undead-rgb), 0.3);
+
+  /* Warrior -> Orange */
+  --color-Warrior: var(--color-accent-orange);
+  --color-Warrior-rgb: 203, 119, 46;
+  --color-Warrior-transparent: rgba(var(--color-Warrior-rgb), 0.3);
+
+  /* Fire -> Orange */
+  --color-Fire: var(--color-accent-orange);
+  --color-Fire-rgb: 203, 119, 46;
+  --color-Fire-transparent: rgba(var(--color-Fire-rgb), 0.3);
+
+  /* Ace -> Purple Light */
+  --color-Ace: var(--color-purple-light);
+  --color-Ace-rgb: 145, 56, 227;
+  --color-Ace-transparent: rgba(var(--color-Ace-rgb), 0.3);
+
+  /* Hinder -> Neutral */
+  --color-Hinder: var(--color-neutral);
+  --color-Hinder-rgb: 178, 174, 179;
+  --color-Hinder-transparent: rgba(var(--color-Hinder-rgb), 0.3);
+
+  /* Titan -> Gold */
+  --color-Titan: var(--color-accent-gold);
+  --color-Titan-rgb: 239, 193, 73;
+  --color-Titan-transparent: rgba(var(--color-Titan-rgb), 0.3);
+
+  /* Superstar -> Magenta */
+  --color-Superstar: var(--color-accent-magenta);
+  --color-Superstar-rgb: 172, 70, 153;
+  --color-Superstar-transparent: rgba(var(--color-Superstar-rgb), 0.3);
+
+  /* Dragon -> Magenta */
+  --color-Dragon: var(--color-accent-magenta);
+  --color-Dragon-rgb: 172, 70, 153;
+  --color-Dragon-transparent: rgba(var(--color-Dragon-rgb), 0.3);
+
+  /* Building -> Neutral */
+  --color-Building: var(--color-neutral);
+  --color-Building-rgb: 178, 174, 179;
+  --color-Building-transparent: rgba(var(--color-Building-rgb), 0.3);
 }
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--color-accent-gold);
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #ffffff;
 }
 
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--color-purple-deep);
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  color: #ffffff;
 }
 
 button {
@@ -92,20 +136,24 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--color-purple-dark);
+  color: #ffffff;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: all 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: var(--color-purple-light);
+  background-color: var(--color-purple-base);
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 4px auto var(--color-purple-light);
 }
 
 .card {
   padding: 2em;
+  background-color: var(--color-purple-dark);
+  border-radius: 8px;
 }
 
 #app {
@@ -113,21 +161,34 @@ button:focus-visible {
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  background-color: #fff; /* White background for the app content */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  margin: 20px auto; /* Center the app with some margin */
+  background-color: transparent;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: var(--color-purple-deep);
+    background-color: #f5f0fa;
+  }
+  body {
+    background-color: #f5f0fa;
+  }
+  h1 {
+    color: var(--color-purple-deep);
   }
   a:hover {
-    color: #747bff;
+    color: var(--color-purple-base);
   }
   button {
-    background-color: #f9f9f9;
+    background-color: #ffffff;
+    color: var(--color-purple-deep);
+    border: 1px solid var(--color-neutral);
+  }
+  button:hover {
+    border-color: var(--color-purple-base);
+    background-color: #f0e6fa;
+  }
+  .card {
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
   }
 }
