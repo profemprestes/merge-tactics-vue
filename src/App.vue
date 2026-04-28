@@ -14,7 +14,7 @@ import TheHeader from './components/TheHeader.vue';
 </script>
 
 <style scoped>
-#app {
+#app-wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;

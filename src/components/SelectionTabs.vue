@@ -150,44 +150,44 @@ function toggleSelection(name, category) {
 </script>
 
 <style scoped>
-
-
 .selection-tabs-container {
   margin-top: 20px;
   margin-bottom: 20px;
-  border: 1px solid #eee;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   overflow: hidden;
   user-select: none;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .tabs {
   display: flex;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .tabs .tab-item {
   flex: 1;
-  padding: 10px 15px;
+  padding: 12px 15px;
   border: none;
-  background-color: #f9f9f9;
+  background-color: rgba(0, 0, 0, 0.4);
   cursor: pointer;
-  font-weight: bold;
-  color: #555;
-  transition: background-color 0.3s ease;
+  font-weight: 600;
+  color: #a1a1aa;
+  transition: all 0.3s ease;
   outline: none;
+  text-align: center;
 }
 
 .tabs .tab-item:hover {
-  background-color: #e0e0e0;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #e4e4e7;
 }
 
 .tabs .tab-item.active {
-  background-color: #fff;
-  color: #333;
-  border-bottom: 2px solid #ccc;
-  box-shadow: 0 -2px 0 0 #ccc inset; /* Add this line */
-  font-weight: 700; /* Make it bolder */
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-bottom: 2px solid var(--color-accent-gold);
+  font-weight: 700;
 }
 
 .selection-list {
@@ -196,7 +196,7 @@ function toggleSelection(name, category) {
 
 .unit-selection-table-container {
   overflow-x: auto;
-  border: 1px solid #eee;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
 }
 
@@ -207,76 +207,32 @@ function toggleSelection(name, category) {
 
 .unit-selection-table th,
 .unit-selection-table td {
-  border: 1px solid #eee;
+  border: 1px solid rgba(255, 255, 255, 0.05);
   padding: 8px;
   text-align: center;
+  color: #ffffff;
 }
 
-.unit-selection-table th.Noble {
-  background-color: var(--color-Noble-transparent);
-}
-
-.unit-selection-table th.Tank {
-  background-color: var(--color-Tank-transparent);
-}
-
-.unit-selection-table th.Clan {
-  background-color: var(--color-Clan-transparent);
-}
-
-.unit-selection-table th.Marksman {
-  background-color: var(--color-Marksman-transparent);
-}
-
-.unit-selection-table th.Goblin {
-  background-color: var(--color-Goblin-transparent);
-}
-
-.unit-selection-table th.Assassin {
-  background-color: var(--color-Assassin-transparent);
-}
-
-.unit-selection-table th.Undead {
-  background-color: var(--color-Undead-transparent);
-}
-
-.unit-selection-table th.Warrior {
-  background-color: var(--color-Warrior-transparent);
-}
-
-.unit-selection-table th.Fire {
-  background-color: var(--color-Fire-transparent);
-}
-
-.unit-selection-table th.Ace {
-  background-color: var(--color-Ace-transparent);
-}
-
-.unit-selection-table th.Hinder {
-  background-color: var(--color-Hinder-transparent);
-}
-
-.unit-selection-table th.Titan {
-  background-color: var(--color-Titan-transparent);
-}
-
-.unit-selection-table th.Superstar {
-  background-color: var(--color-Superstar-transparent);
-}
-
-.unit-selection-table th.Dragon {
-  background-color: var(--color-Dragon-transparent);
-}
-
-.unit-selection-table th.Building {
-  background-color: var(--color-Building-transparent);
-}
+.unit-selection-table th.Noble { background-color: var(--color-Noble-transparent); }
+.unit-selection-table th.Tank { background-color: var(--color-Tank-transparent); }
+.unit-selection-table th.Clan { background-color: var(--color-Clan-transparent); }
+.unit-selection-table th.Marksman { background-color: var(--color-Marksman-transparent); }
+.unit-selection-table th.Goblin { background-color: var(--color-Goblin-transparent); }
+.unit-selection-table th.Assassin { background-color: var(--color-Assassin-transparent); }
+.unit-selection-table th.Undead { background-color: var(--color-Undead-transparent); }
+.unit-selection-table th.Warrior { background-color: var(--color-Warrior-transparent); }
+.unit-selection-table th.Fire { background-color: var(--color-Fire-transparent); }
+.unit-selection-table th.Ace { background-color: var(--color-Ace-transparent); }
+.unit-selection-table th.Hinder { background-color: var(--color-Hinder-transparent); }
+.unit-selection-table th.Titan { background-color: var(--color-Titan-transparent); }
+.unit-selection-table th.Superstar { background-color: var(--color-Superstar-transparent); }
+.unit-selection-table th.Dragon { background-color: var(--color-Dragon-transparent); }
+.unit-selection-table th.Building { background-color: var(--color-Building-transparent); }
 
 .unit-selection-table th {
-  background-color: #f9f9f9;
+  background-color: rgba(0, 0, 0, 0.5);
   font-weight: bold;
   white-space: nowrap;
-  transition: background-color 0.2s ease; /* Add transition for hover effect */
 }
 
 .skill-selection-grid {
@@ -286,56 +242,26 @@ function toggleSelection(name, category) {
 }
 
 .skill-role-group {
-  border: 1px solid #eee;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   padding: 10px;
 }
 
-.skill-role-group.Noble {
-  background-color: var(--color-Noble-transparent);
-}
-.skill-role-group.Tank {
-  background-color: var(--color-Tank-transparent);
-}
-.skill-role-group.Clan {
-  background-color: var(--color-Clan-transparent);
-}
-.skill-role-group.Marksman {
-  background-color: var(--color-Marksman-transparent);
-}
-.skill-role-group.Goblin {
-  background-color: var(--color-Goblin-transparent);
-}
-.skill-role-group.Assassin {
-  background-color: var(--color-Assassin-transparent);
-}
-.skill-role-group.Undead {
-  background-color: var(--color-Undead-transparent);
-}
-.skill-role-group.Warrior {
-  background-color: var(--color-Warrior-transparent);
-}
-.skill-role-group.Fire {
-  background-color: var(--color-Fire-transparent);
-}
-.skill-role-group.Ace {
-  background-color: var(--color-Ace-transparent);
-}
-.skill-role-group.Hinder {
-  background-color: var(--color-Hinder-transparent);
-}
-.skill-role-group.Titan {
-  background-color: var(--color-Titan-transparent);
-}
-.skill-role-group.Superstar {
-  background-color: var(--color-Superstar-transparent);
-}
-.skill-role-group.Dragon {
-  background-color: var(--color-Dragon-transparent);
-}
-.skill-role-group.Building {
-  background-color: var(--color-Building-transparent);
-}
+.skill-role-group.Noble { background-color: var(--color-Noble-transparent); }
+.skill-role-group.Tank { background-color: var(--color-Tank-transparent); }
+.skill-role-group.Clan { background-color: var(--color-Clan-transparent); }
+.skill-role-group.Marksman { background-color: var(--color-Marksman-transparent); }
+.skill-role-group.Goblin { background-color: var(--color-Goblin-transparent); }
+.skill-role-group.Assassin { background-color: var(--color-Assassin-transparent); }
+.skill-role-group.Undead { background-color: var(--color-Undead-transparent); }
+.skill-role-group.Warrior { background-color: var(--color-Warrior-transparent); }
+.skill-role-group.Fire { background-color: var(--color-Fire-transparent); }
+.skill-role-group.Ace { background-color: var(--color-Ace-transparent); }
+.skill-role-group.Hinder { background-color: var(--color-Hinder-transparent); }
+.skill-role-group.Titan { background-color: var(--color-Titan-transparent); }
+.skill-role-group.Superstar { background-color: var(--color-Superstar-transparent); }
+.skill-role-group.Dragon { background-color: var(--color-Dragon-transparent); }
+.skill-role-group.Building { background-color: var(--color-Building-transparent); }
 
 .skill-role-group h5 {
   margin-top: 0;
@@ -343,6 +269,8 @@ function toggleSelection(name, category) {
   font-size: 1em;
   text-align: center;
   padding-bottom: 5px;
+  color: #ffffff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .skill-items {
@@ -353,41 +281,44 @@ function toggleSelection(name, category) {
 
 .skill-item {
   padding: 4px 8px;
-  border: 1px solid #ddd;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 5px;
-  background-color: #f0f0f0;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #e4e4e7;
   cursor: pointer;
   text-align: center;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+  transition: all 0.2s ease;
   white-space: nowrap;
 }
 
 .skill-item:hover {
-  border-color: var(--primary-color-hover);
+  border-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .skill-item.selected-item {
-  background-color: var(--primary-color) !important;
-  color: white;
-  border-color: var(--primary-color) !important;
+  background-color: var(--color-accent-gold) !important;
+  color: #000000;
+  border-color: var(--color-accent-gold) !important;
+  font-weight: 600;
+  box-shadow: 0 0 10px rgba(239, 193, 73, 0.5);
 }
 
 .skill-item.selected-item:hover {
-  background-color: var(--primary-color-hover) !important;
-  border-color: var(--primary-color-hover) !important;
+  filter: brightness(1.1);
 }
 
 .unit-selection-table thead th {
   position: sticky;
   top: 0;
-  background-color: #f9f9f9;
+  background-color: #1a1a1a;
   z-index: 1;
 }
 
 .unit-selection-table tbody th {
   position: sticky;
   left: 0;
-  background-color: #f9f9f9;
+  background-color: #1a1a1a;
   z-index: 1;
   vertical-align: middle;
 }
@@ -396,35 +327,37 @@ function toggleSelection(name, category) {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  min-height: 50px; /* Adjust as needed */
+  min-height: 50px;
   justify-content: center;
   align-items: center;
 }
 
 .unit-item {
   padding: 4px 8px;
-  border: 1px solid #ddd;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 5px;
-  background-color: #f0f0f0;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #e4e4e7;
   cursor: pointer;
   text-align: center;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+  transition: all 0.2s ease;
   white-space: nowrap;
 }
 
 .unit-item:hover {
-  border-color: var(--primary-color-hover);
+  border-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .unit-item.selected-item {
-  background-color: var(--primary-color) !important;
-  color: white;
-  border-color: var(--primary-color) !important;
+  background-color: var(--color-accent-gold) !important;
+  color: #000000;
+  border-color: var(--color-accent-gold) !important;
+  font-weight: 600;
+  box-shadow: 0 0 10px rgba(239, 193, 73, 0.5);
 }
 
 .unit-item.selected-item:hover {
-  background-color: var(--primary-color-hover) !important;
-  border-color: var(--primary-color-hover) !important;
+  filter: brightness(1.1);
 }
-
 </style>
