@@ -4,7 +4,7 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/merge-tactics-vue/',
+  base: process.env.VERCEL ? '/' : '/merge-tactics-vue/',
   plugins: [vue()],
   test: {
     globals: true,
