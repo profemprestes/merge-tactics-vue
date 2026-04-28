@@ -21,8 +21,8 @@ describe('TeamList', () => {
       props: { teams: mockTeams },
       global,
     });
-    expect(wrapper.findAll('.team-table tbody tr').length).toBe(1);
-    expect(wrapper.find('.unit-list').text()).toContain('Knight');
+    expect(wrapper.findAll('.team-card').length).toBe(1);
+    expect(wrapper.find('.team-units').text()).toContain('Knight');
   });
 
   it('shows a message when no teams are found', () => {
@@ -47,7 +47,7 @@ describe('TeamList', () => {
       global,
     });
     expect(wrapper.find('.search-summary').exists()).toBe(true);
-    expect(wrapper.find('.search-summary').text()).toContain('Mínimo de habilidades: 2');
+    expect(wrapper.find('.search-summary').text()).toContain('Mínimo Habilidades: 2');
     expect(wrapper.find('.search-summary').text()).toContain('Unidades: Knight');
   });
 });

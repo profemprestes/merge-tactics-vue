@@ -1,0 +1,340 @@
+[
+  {
+    "name": "Archer Queen",
+    "cost": 5,
+    "traits": [
+      "Clan",
+      "Superstar"
+    ],
+    "hp": "-",
+    "dmg": "-",
+    "aspd": "-",
+    "range": "-",
+    "img": "archer_queen.png"
+  },
+  {
+    "name": "Golden Knight",
+    "cost": 5,
+    "traits": [
+      "Noble",
+      "Assassin"
+    ],
+    "hp": "-",
+    "dmg": "-",
+    "aspd": "-",
+    "range": "-",
+    "img": "golden_knight.png"
+  },
+  {
+    "name": "Monk",
+    "cost": 5,
+    "traits": [
+      "Ace",
+      "Tank"
+    ],
+    "hp": "-",
+    "dmg": "-",
+    "aspd": "-",
+    "range": "-",
+    "img": "monk.png"
+  },
+  {
+    "name": "Skeleton King",
+    "cost": 5,
+    "traits": [
+      "Undead",
+      "Warrior"
+    ],
+    "hp": "-",
+    "dmg": "-",
+    "aspd": "-",
+    "range": "-",
+    "img": "skeleton_king.png"
+  },
+  {
+    "name": "Baby Dragon",
+    "cost": 4,
+    "traits": [
+      "Fire",
+      "Dragon"
+    ],
+    "hp": "-",
+    "dmg": "-",
+    "aspd": "-",
+    "range": "-",
+    "img": "baby_dragon.png"
+  },
+  {
+    "name": "Bandit",
+    "cost": 4,
+    "traits": [
+      "Ace",
+      "Assassin"
+    ],
+    "hp": "-",
+    "dmg": "-",
+    "aspd": "-",
+    "range": "-",
+    "img": "bandit.png"
+  },
+  {
+    "name": "Goblin Machine",
+    "cost": 4,
+    "traits": [
+      "Goblin",
+      "Superstar"
+    ],
+    "hp": "-",
+    "dmg": "-",
+    "aspd": "-",
+    "range": "-",
+    "img": "goblin_machine.png"
+  },
+  {
+    "name": "P.E.K.K.A.",
+    "cost": 4,
+    "traits": [
+      "Ace",
+      "Superstar"
+    ],
+    "hp": "-",
+    "dmg": "-",
+    "aspd": "-",
+    "range": "-",
+    "img": "p_e_k_k_a.png"
+  },
+  {
+    "name": "Prince",
+    "cost": 4,
+    "traits": [
+      "Noble",
+      "Warrior"
+    ],
+    "hp": "-",
+    "dmg": "-",
+    "aspd": "-",
+    "range": "-",
+    "img": "prince.png"
+  },
+  {
+    "name": "Princess",
+    "cost": 4,
+    "traits": [
+      "Noble",
+      "Hinder"
+    ],
+    "hp": "-",
+    "dmg": "-",
+    "aspd": "-",
+    "range": "-",
+    "img": "princess.png"
+  },
+  {
+    "name": "Witch",
+    "cost": 4,
+    "traits": [
+      "Undead",
+      "Hinder"
+    ],
+    "hp": "-",
+    "dmg": "-",
+    "aspd": "-",
+    "range": "-",
+    "img": "witch.png"
+  },
+  {
+    "name": "Executioner",
+    "cost": 3,
+    "traits": [
+      "Ace",
+      "Hinder"
+    ],
+    "hp": "-",
+    "dmg": "-",
+    "aspd": "-",
+    "range": "-",
+    "img": "executioner.png"
+  },
+  {
+    "name": "Giant",
+    "cost": 3,
+    "traits": [
+      "Titan",
+      "Superstar"
+    ],
+    "hp": "-",
+    "dmg": "-",
+    "aspd": "-",
+    "range": "-",
+    "img": "giant.png"
+  },
+  {
+    "name": "Giant Skeleton",
+    "cost": 3,
+    "traits": [
+      "Undead",
+      "Tank"
+    ],
+    "hp": "-",
+    "dmg": "-",
+    "aspd": "-",
+    "range": "-",
+    "img": "giant_skeleton.png"
+  },
+  {
+    "name": "Goblin Demolisher",
+    "cost": 3,
+    "traits": [
+      "Goblin",
+      "Warrior"
+    ],
+    "hp": "-",
+    "dmg": "-",
+    "aspd": "-",
+    "range": "-",
+    "img": "goblin_demolisher.png"
+  },
+  {
+    "name": "Musketeer",
+    "cost": 3,
+    "traits": [
+      "Noble",
+      "Marksman"
+    ],
+    "hp": "-",
+    "dmg": "-",
+    "aspd": "-",
+    "range": "-",
+    "img": "musketeer.png"
+  },
+  {
+    "name": "Royal Ghost",
+    "cost": 3,
+    "traits": [
+      "Undead",
+      "Assassin"
+    ],
+    "hp": "-",
+    "dmg": "-",
+    "aspd": "-",
+    "range": "-",
+    "img": "royal_ghost.png"
+  },
+  {
+    "name": "Royal Giant",
+    "cost": 3,
+    "traits": [
+      "Titan",
+      "Marksman"
+    ],
+    "hp": "-",
+    "dmg": "-",
+    "aspd": "-",
+    "range": "-",
+    "img": "royal_giant.png"
+  },
+  {
+    "name": "Valkyrie",
+    "cost": 3,
+    "traits": [
+      "Clan",
+      "Tank"
+    ],
+    "hp": "-",
+    "dmg": "-",
+    "aspd": "-",
+    "range": "-",
+    "img": "valkyrie.png"
+  },
+  {
+    "name": "Archer",
+    "cost": 2,
+    "traits": [
+      "Clan",
+      "Marksman"
+    ],
+    "hp": "-",
+    "dmg": "-",
+    "aspd": "-",
+    "range": "-",
+    "img": "archers.png"
+  },
+  {
+    "name": "Barbarian",
+    "cost": 2,
+    "traits": [
+      "Clan",
+      "Warrior"
+    ],
+    "hp": "-",
+    "dmg": "-",
+    "aspd": "-",
+    "range": "-",
+    "img": "barbarians.png"
+  },
+  {
+    "name": "Dart Goblin",
+    "cost": 2,
+    "traits": [
+      "Goblin",
+      "Marksman"
+    ],
+    "hp": "-",
+    "dmg": "-",
+    "aspd": "-",
+    "range": "-",
+    "img": "dart_goblin.png"
+  },
+  {
+    "name": "Goblin",
+    "cost": 2,
+    "traits": [
+      "Goblin",
+      "Assassin"
+    ],
+    "hp": "-",
+    "dmg": "-",
+    "aspd": "-",
+    "range": "-",
+    "img": "goblins.png"
+  },
+  {
+    "name": "Knight",
+    "cost": 2,
+    "traits": [
+      "Noble",
+      "Tank"
+    ],
+    "hp": "-",
+    "dmg": "-",
+    "aspd": "-",
+    "range": "-",
+    "img": "knight.png"
+  },
+  {
+    "name": "Skeleton Dragon",
+    "cost": 2,
+    "traits": [
+      "Undead",
+      "Dragon"
+    ],
+    "hp": "-",
+    "dmg": "-",
+    "aspd": "-",
+    "range": "-",
+    "img": "skeleton_dragons.png"
+  },
+  {
+    "name": "Wizard",
+    "cost": 2,
+    "traits": [
+      "Fire",
+      "Hinder"
+    ],
+    "hp": "-",
+    "dmg": "-",
+    "aspd": "-",
+    "range": "-",
+    "img": "wizard.png"
+  }
+]
