@@ -28,13 +28,13 @@
                   v-for="skill in team.skills"
                   :key="skill.name"
                   class="skill-tag"
-                  :class="skill.role"
+                  :class="skill.role.toLowerCase()"
                 >{{ translateSkillName(skill.name) }}</span>
               </div>
             </td>
             <td>
               <ul class="unit-list">
-                <li v-for="unit in team.units" :key="unit.name" v-tippy="translateRoles(unit.role).join(', ')">{{ unit.name }}</li>
+                <li v-for="unit in team.units" :key="unit.name" v-tippy="translateRoles(unit.traits).join(', ')">{{ unit.name }}</li>
               </ul>
             </td>
           </tr>
@@ -82,22 +82,26 @@ const searchSummary = computed(() => {
 });
 
 const orderedRoles = ref([
-  'tank', 'fighter', 'assassin', 'shooter', 'thrower', 'avenger',
-  'elite', 'clan', 'goblin', 'ace', 'undead'
+  'Tank', 'Warrior', 'Assassin', 'Marksman', 'Dragon', 'Hinder', 'Superstar',
+  'Noble', 'Clan', 'Goblin', 'Undead', 'Fire', 'Ace', 'Titan', 'Building'
 ]);
 
 const roleTranslations = {
-  'ace': 'As',
-  'assassin': 'Asesino',
-  'avenger': 'Vengador',
-  'fighter': 'Luchador',
-  'clan': 'Clan',
-  'goblin': 'Duende',
-  'tank': 'Tanque',
-  'elite': 'Élite',
-  'shooter': 'Tirador',
-  'thrower': 'Lanzador',
-  'undead': 'No muerto',
+  'Noble': 'Noble',
+  'Clan': 'Clan',
+  'Goblin': 'Duende',
+  'Undead': 'No muerto',
+  'Fire': 'Fuego',
+  'Ace': 'As',
+  'Titan': 'Titán',
+  'Tank': 'Tanque',
+  'Marksman': 'Tirador',
+  'Assassin': 'Asesino',
+  'Warrior': 'Luchador',
+  'Dragon': 'Dragón',
+  'Hinder': 'Estorbo',
+  'Superstar': 'Superestrella',
+  'Building': 'Estructura'
 };
 
 function translateRole(roleName) {
@@ -111,7 +115,7 @@ function translateRoles(roles) {
 function translateSkillName(skillName) {
   const match = skillName.match(/^([a-z]+)(\d*)$/);
   if (match) {
-    const rolePart = match[1];
+    const rolePart = match[1].charAt(0).toUpperCase() + match[1].slice(1);
     const numberPart = match[2];
     const translatedRole = roleTranslations[rolePart] || rolePart;
     return translatedRole + numberPart;
@@ -172,40 +176,23 @@ function translateSkillName(skillName) {
   font-size: 0.85em;
 }
 
+
 /* Skill role specific colors */
-.skill-tag.elite {
-  background-color: var(--color-elite-transparent);
-}
-.skill-tag.tank {
-  background-color: var(--color-tank-transparent);
-}
-.skill-tag.clan {
-  background-color: var(--color-clan-transparent);
-}
-.skill-tag.shooter {
-  background-color: var(--color-shooter-transparent);
-}
-.skill-tag.goblin {
-  background-color: var(--color-goblin-transparent);
-}
-.skill-tag.assassin {
-  background-color: var(--color-assassin-transparent);
-}
-.skill-tag.undead {
-  background-color: var(--color-undead-transparent);
-}
-.skill-tag.fighter {
-  background-color: var(--color-fighter-transparent);
-}
-.skill-tag.avenger {
-  background-color: var(--color-avenger-transparent);
-}
-.skill-tag.ace {
-  background-color: var(--color-ace-transparent);
-}
-.skill-tag.thrower {
-  background-color: var(--color-thrower-transparent);
-}
+.skill-tag.noble { background-color: var(--color-elite-transparent); }
+.skill-tag.clan { background-color: var(--color-clan-transparent); }
+.skill-tag.goblin { background-color: var(--color-goblin-transparent); }
+.skill-tag.undead { background-color: var(--color-undead-transparent); }
+.skill-tag.fire { background-color: rgba(255, 69, 0, 0.3); }
+.skill-tag.ace { background-color: var(--color-ace-transparent); }
+.skill-tag.titan { background-color: rgba(139, 69, 19, 0.3); }
+.skill-tag.tank { background-color: var(--color-tank-transparent); }
+.skill-tag.marksman { background-color: var(--color-shooter-transparent); }
+.skill-tag.assassin { background-color: var(--color-assassin-transparent); }
+.skill-tag.warrior { background-color: var(--color-fighter-transparent); }
+.skill-tag.dragon { background-color: rgba(255, 140, 0, 0.3); }
+.skill-tag.hinder { background-color: var(--color-avenger-transparent); }
+.skill-tag.superstar { background-color: rgba(255, 215, 0, 0.3); }
+.skill-tag.building { background-color: rgba(128, 128, 128, 0.3); }
 
 .unit-list {
   list-style: none;

@@ -20,7 +20,7 @@ describe('SelectionTabs', () => {
     const wrapper = mount(SelectionTabs);
     await wrapper.find('.unit-item').trigger('click');
     expect(wrapper.emitted('update:includedUnits')).toBeTruthy();
-    expect(wrapper.emitted('update:includedUnits')[0][0]).toEqual(['Caballero']);
+    expect(wrapper.emitted('update:includedUnits')[0][0]).toEqual(['Knight']);
   });
 
   it('emits update event when a skill is clicked', async () => {

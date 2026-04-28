@@ -15,7 +15,7 @@
                 <th
                   v-for="colRole in columnRoles"
                   :key="colRole"
-                  :class="[colRole]"
+                  :class="[colRole.toLowerCase()]"
                 >
                   {{ translateRoleName(colRole) }}
                 </th>
@@ -24,7 +24,7 @@
             <tbody>
               <tr v-for="rowRole in rowRoles" :key="rowRole">
                 <th
-                  :class="[rowRole]"
+                  :class="[rowRole.toLowerCase()]"
                 >
                   {{ translateRoleName(rowRole) }}
                 </th>
@@ -49,8 +49,8 @@
 
       <div v-if="activeTab === 'includeSkills'" class="tab-content-include-skills">
         <div class="skill-selection-grid">
-          <div v-for="role in orderedRoles" :key="role" class="skill-role-group" :class="[role]">
-            <h5 :class="[role]">{{ translateRoleName(role) }}</h5>
+          <div v-for="role in orderedRoles" :key="role" class="skill-role-group" :class="[role.toLowerCase()]">
+            <h5 :class="[role.toLowerCase()]">{{ translateRoleName(role) }}</h5>
             <div class="skill-items">
               <div
                 v-for="skill in skillsByRole[role]"
@@ -86,21 +86,25 @@ const allUnits = ref(UNIT_ATTRIBUTES);
 const allSkills = ref(SKILL_CONDITIONS);
 
 const roleTranslations = {
-  'ace': 'As',
-  'assassin': 'Asesino',
-  'avenger': 'Vengador',
-  'fighter': 'Luchador',
-  'clan': 'Clan',
-  'goblin': 'Duende',
-  'tank': 'Tanque',
-  'elite': 'Élite',
-  'shooter': 'Tirador',
-  'thrower': 'Lanzador',
-  'undead': 'No muerto',
+  'Noble': 'Noble',
+  'Clan': 'Clan',
+  'Goblin': 'Duende',
+  'Undead': 'No muerto',
+  'Fire': 'Fuego',
+  'Ace': 'As',
+  'Titan': 'Titán',
+  'Tank': 'Tanque',
+  'Marksman': 'Tirador',
+  'Assassin': 'Asesino',
+  'Warrior': 'Luchador',
+  'Dragon': 'Dragón',
+  'Hinder': 'Estorbo',
+  'Superstar': 'Superestrella',
+  'Building': 'Estructura'
 };
 
-const columnRoles = ['tank', 'fighter', 'assassin', 'shooter', 'thrower', 'avenger'];
-const rowRoles = ['elite', 'clan', 'ace', 'undead', 'goblin'];
+const columnRoles = ['Tank', 'Marksman', 'Assassin', 'Warrior', 'Dragon', 'Hinder', 'Superstar', 'Building'];
+const rowRoles = ['Noble', 'Clan', 'Goblin', 'Undead', 'Fire', 'Ace', 'Titan', 'Building'];
 
 const orderedRoles = ROLE_ORDER; // Usar ROLE_ORDER importado de logic.js
 
@@ -111,7 +115,7 @@ const unitsByRoleIntersection = computed(() => {
     grouped[rowRole] = {};
     columnRoles.forEach(colRole => {
       grouped[rowRole][colRole] = allUnits.value.filter(unit =>
-        unit.role.includes(rowRole) && unit.role.includes(colRole)
+        (unit.traits?.includes(rowRole) && unit.traits?.includes(colRole)) || (rowRole === 'Building' && colRole === 'Building' && unit.traits?.includes('Building'))
       );
     });
   });
@@ -130,7 +134,7 @@ const skillsByRole = computed(() => {
 function translateSkillName(skillName) {
   const match = skillName.match(/^([a-z]+)(\d*)$/);
   if (match) {
-    const rolePart = match[1];
+    const rolePart = match[1].charAt(0).toUpperCase() + match[1].slice(1);
     const numberPart = match[2];
     const translatedRole = roleTranslations[rolePart] || rolePart;
     return translatedRole + numberPart;
@@ -233,102 +237,39 @@ function toggleSelection(name, category) {
   text-align: center;
 }
 
-.unit-selection-table th.elite {
-  background-color: var(--color-elite-transparent);
-}
 
-.unit-selection-table th.tank {
-  background-color: var(--color-tank-transparent);
-}
+.unit-selection-table th.noble { background-color: var(--color-elite-transparent); }
+.unit-selection-table th.clan { background-color: var(--color-clan-transparent); }
+.unit-selection-table th.goblin { background-color: var(--color-goblin-transparent); }
+.unit-selection-table th.undead { background-color: var(--color-undead-transparent); }
+.unit-selection-table th.fire { background-color: rgba(255, 69, 0, 0.3); }
+.unit-selection-table th.ace { background-color: var(--color-ace-transparent); }
+.unit-selection-table th.titan { background-color: rgba(139, 69, 19, 0.3); }
+.unit-selection-table th.tank { background-color: var(--color-tank-transparent); }
+.unit-selection-table th.marksman { background-color: var(--color-shooter-transparent); }
+.unit-selection-table th.assassin { background-color: var(--color-assassin-transparent); }
+.unit-selection-table th.warrior { background-color: var(--color-fighter-transparent); }
+.unit-selection-table th.dragon { background-color: rgba(255, 140, 0, 0.3); }
+.unit-selection-table th.hinder { background-color: var(--color-avenger-transparent); }
+.unit-selection-table th.superstar { background-color: rgba(255, 215, 0, 0.3); }
+.unit-selection-table th.building { background-color: rgba(128, 128, 128, 0.3); }
 
-.unit-selection-table th.clan {
-  background-color: var(--color-clan-transparent);
-}
+.skill-role-group.noble { background-color: var(--color-elite-transparent); }
+.skill-role-group.clan { background-color: var(--color-clan-transparent); }
+.skill-role-group.goblin { background-color: var(--color-goblin-transparent); }
+.skill-role-group.undead { background-color: var(--color-undead-transparent); }
+.skill-role-group.fire { background-color: rgba(255, 69, 0, 0.3); }
+.skill-role-group.ace { background-color: var(--color-ace-transparent); }
+.skill-role-group.titan { background-color: rgba(139, 69, 19, 0.3); }
+.skill-role-group.tank { background-color: var(--color-tank-transparent); }
+.skill-role-group.marksman { background-color: var(--color-shooter-transparent); }
+.skill-role-group.assassin { background-color: var(--color-assassin-transparent); }
+.skill-role-group.warrior { background-color: var(--color-fighter-transparent); }
+.skill-role-group.dragon { background-color: rgba(255, 140, 0, 0.3); }
+.skill-role-group.hinder { background-color: var(--color-avenger-transparent); }
+.skill-role-group.superstar { background-color: rgba(255, 215, 0, 0.3); }
+.skill-role-group.building { background-color: rgba(128, 128, 128, 0.3); }
 
-.unit-selection-table th.shooter {
-  background-color: var(--color-shooter-transparent);
-}
-
-.unit-selection-table th.goblin {
-  background-color: var(--color-goblin-transparent);
-}
-
-.unit-selection-table th.assassin {
-  background-color: var(--color-assassin-transparent);
-}
-
-.unit-selection-table th.undead {
-  background-color: var(--color-undead-transparent);
-}
-
-.unit-selection-table th.fighter {
-  background-color: var(--color-fighter-transparent);
-}
-
-.unit-selection-table th.avenger {
-  background-color: var(--color-avenger-transparent);
-}
-
-.unit-selection-table th.ace {
-  background-color: var(--color-ace-transparent);
-}
-
-.unit-selection-table th.thrower {
-  background-color: var(--color-thrower-transparent);
-}
-
-.unit-selection-table th {
-  background-color: #f9f9f9;
-  font-weight: bold;
-  white-space: nowrap;
-  transition: background-color 0.2s ease; /* Add transition for hover effect */
-}
-
-.skill-selection-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 15px;
-}
-
-.skill-role-group {
-  border: 1px solid #eee;
-  border-radius: 8px;
-  padding: 10px;
-}
-
-.skill-role-group.elite {
-  background-color: var(--color-elite-transparent);
-}
-.skill-role-group.tank {
-  background-color: var(--color-tank-transparent);
-}
-.skill-role-group.clan {
-  background-color: var(--color-clan-transparent);
-}
-.skill-role-group.shooter {
-  background-color: var(--color-shooter-transparent);
-}
-.skill-role-group.goblin {
-  background-color: var(--color-goblin-transparent);
-}
-.skill-role-group.assassin {
-  background-color: var(--color-assassin-transparent);
-}
-.skill-role-group.undead {
-  background-color: var(--color-undead-transparent);
-}
-.skill-role-group.fighter {
-  background-color: var(--color-fighter-transparent);
-}
-.skill-role-group.avenger {
-  background-color: var(--color-avenger-transparent);
-}
-.skill-role-group.ace {
-  background-color: var(--color-ace-transparent);
-}
-.skill-role-group.thrower {
-  background-color: var(--color-thrower-transparent);
-}
 
 .skill-role-group h5 {
   margin-top: 0;
