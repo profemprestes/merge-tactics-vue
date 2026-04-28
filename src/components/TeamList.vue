@@ -28,13 +28,13 @@
                   v-for="skill in team.skills"
                   :key="skill.name"
                   class="skill-tag"
-                  :class="skill.role"
+                  :class="skill.trait"
                 >{{ translateSkillName(skill.name) }}</span>
               </div>
             </td>
             <td>
               <ul class="unit-list">
-                <li v-for="unit in team.units" :key="unit.name" v-tippy="translateRoles(unit.role).join(', ')">{{ unit.name }}</li>
+                <li v-for="unit in team.units" :key="unit.name" v-tippy="translateRoles(unit.traits).join(', ')">{{ unit.name }}</li>
               </ul>
             </td>
           </tr>
@@ -46,6 +46,7 @@
 
 <script setup>
 import { defineProps, ref, computed } from 'vue';
+import { ROLE_ORDER } from '../logic.js';
 
 const props = defineProps({
   teams: {
@@ -81,27 +82,10 @@ const searchSummary = computed(() => {
   return [];
 });
 
-const orderedRoles = ref([
-  'tank', 'fighter', 'assassin', 'shooter', 'thrower', 'avenger',
-  'elite', 'clan', 'goblin', 'ace', 'undead'
-]);
-
-const roleTranslations = {
-  'ace': 'As',
-  'assassin': 'Asesino',
-  'avenger': 'Vengador',
-  'fighter': 'Luchador',
-  'clan': 'Clan',
-  'goblin': 'Duende',
-  'tank': 'Tanque',
-  'elite': 'Élite',
-  'shooter': 'Tirador',
-  'thrower': 'Lanzador',
-  'undead': 'No muerto',
-};
+const orderedRoles = ref(ROLE_ORDER);
 
 function translateRole(roleName) {
-  return roleTranslations[roleName] || roleName;
+  return roleName;
 }
 
 function translateRoles(roles) {
@@ -109,13 +93,6 @@ function translateRoles(roles) {
 }
 
 function translateSkillName(skillName) {
-  const match = skillName.match(/^([a-z]+)(\d*)$/);
-  if (match) {
-    const rolePart = match[1];
-    const numberPart = match[2];
-    const translatedRole = roleTranslations[rolePart] || rolePart;
-    return translatedRole + numberPart;
-  }
   return skillName;
 }
 </script>
@@ -173,38 +150,50 @@ function translateSkillName(skillName) {
 }
 
 /* Skill role specific colors */
-.skill-tag.elite {
-  background-color: var(--color-elite-transparent);
+.skill-tag.Noble {
+  background-color: var(--color-Noble-transparent);
 }
-.skill-tag.tank {
-  background-color: var(--color-tank-transparent);
+.skill-tag.Tank {
+  background-color: var(--color-Tank-transparent);
 }
-.skill-tag.clan {
-  background-color: var(--color-clan-transparent);
+.skill-tag.Clan {
+  background-color: var(--color-Clan-transparent);
 }
-.skill-tag.shooter {
-  background-color: var(--color-shooter-transparent);
+.skill-tag.Marksman {
+  background-color: var(--color-Marksman-transparent);
 }
-.skill-tag.goblin {
-  background-color: var(--color-goblin-transparent);
+.skill-tag.Goblin {
+  background-color: var(--color-Goblin-transparent);
 }
-.skill-tag.assassin {
-  background-color: var(--color-assassin-transparent);
+.skill-tag.Assassin {
+  background-color: var(--color-Assassin-transparent);
 }
-.skill-tag.undead {
-  background-color: var(--color-undead-transparent);
+.skill-tag.Undead {
+  background-color: var(--color-Undead-transparent);
 }
-.skill-tag.fighter {
-  background-color: var(--color-fighter-transparent);
+.skill-tag.Warrior {
+  background-color: var(--color-Warrior-transparent);
 }
-.skill-tag.avenger {
-  background-color: var(--color-avenger-transparent);
+.skill-tag.Fire {
+  background-color: var(--color-Fire-transparent);
 }
-.skill-tag.ace {
-  background-color: var(--color-ace-transparent);
+.skill-tag.Ace {
+  background-color: var(--color-Ace-transparent);
 }
-.skill-tag.thrower {
-  background-color: var(--color-thrower-transparent);
+.skill-tag.Hinder {
+  background-color: var(--color-Hinder-transparent);
+}
+.skill-tag.Titan {
+  background-color: var(--color-Titan-transparent);
+}
+.skill-tag.Superstar {
+  background-color: var(--color-Superstar-transparent);
+}
+.skill-tag.Dragon {
+  background-color: var(--color-Dragon-transparent);
+}
+.skill-tag.Building {
+  background-color: var(--color-Building-transparent);
 }
 
 .unit-list {

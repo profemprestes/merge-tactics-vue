@@ -17,40 +17,52 @@
   --danger-color: #EF5350;
   --danger-color-hover: #E53935;
 
-  /* Skill Role Colors */
-  --color-elite: #FFD700; /* Gold */
-  --color-elite-rgb: 255, 215, 0;
-  --color-elite-transparent: rgba(255, 215, 0, 0.3);
-  --color-tank: #F0E68C; /* Khaki */
-  --color-tank-rgb: 240, 230, 140;
-  --color-tank-transparent: rgba(240, 230, 140, 0.3);
-  --color-clan: #1E90FF; /* DodgerBlue */
-  --color-clan-rgb: 30, 144, 255;
-  --color-clan-transparent: rgba(30, 144, 255, 0.3);
-  --color-shooter: #7FFFD4; /* Aquamarine */
-  --color-shooter-rgb: 127, 255, 212;
-  --color-shooter-transparent: rgba(127, 255, 212, 0.3);
-  --color-goblin: #8BC34A; /* Light Green */
-  --color-goblin-rgb: 139, 195, 74;
-  --color-goblin-transparent: rgba(139, 195, 74, 0.3);
-  --color-assassin: #DC143C; /* Crimson */
-  --color-assassin-rgb: 220, 20, 60;
-  --color-assassin-transparent: rgba(220, 20, 60, 0.3);
-  --color-undead: #008080; /* Teal */
-  --color-undead-rgb: 0, 128, 128;
-  --color-undead-transparent: rgba(0, 128, 128, 0.3);
-  --color-fighter: #FFA500; /* Orange */
-  --color-fighter-rgb: 255, 165, 0;
-  --color-fighter-transparent: rgba(255, 165, 0, 0.3);
-  --color-avenger: #FF69B4; /* HotPink */
-  --color-avenger-rgb: 255, 105, 180;
-  --color-avenger-transparent: rgba(255, 105, 180, 0.3);
-  --color-ace: #800080; /* Purple */
-  --color-ace-rgb: 128, 0, 128;
-  --color-ace-transparent: rgba(var(--color-ace-rgb), 0.3);
-  --color-thrower: #8B4513; /* SaddleBrown */
-  --color-thrower-rgb: 139, 69, 19;
-  --color-thrower-transparent: rgba(var(--color-thrower-rgb), 0.3);
+  /* Skill Role Colors mapping from old traits where possible or new colors */
+  --color-Noble: #FFD700; /* Gold */
+  --color-Noble-rgb: 255, 215, 0;
+  --color-Noble-transparent: rgba(255, 215, 0, 0.3);
+  --color-Tank: #F0E68C; /* Khaki */
+  --color-Tank-rgb: 240, 230, 140;
+  --color-Tank-transparent: rgba(240, 230, 140, 0.3);
+  --color-Clan: #1E90FF; /* DodgerBlue */
+  --color-Clan-rgb: 30, 144, 255;
+  --color-Clan-transparent: rgba(30, 144, 255, 0.3);
+  --color-Marksman: #7FFFD4; /* Aquamarine */
+  --color-Marksman-rgb: 127, 255, 212;
+  --color-Marksman-transparent: rgba(127, 255, 212, 0.3);
+  --color-Goblin: #8BC34A; /* Light Green */
+  --color-Goblin-rgb: 139, 195, 74;
+  --color-Goblin-transparent: rgba(139, 195, 74, 0.3);
+  --color-Assassin: #DC143C; /* Crimson */
+  --color-Assassin-rgb: 220, 20, 60;
+  --color-Assassin-transparent: rgba(220, 20, 60, 0.3);
+  --color-Undead: #008080; /* Teal */
+  --color-Undead-rgb: 0, 128, 128;
+  --color-Undead-transparent: rgba(0, 128, 128, 0.3);
+  --color-Warrior: #FFA500; /* Orange */
+  --color-Warrior-rgb: 255, 165, 0;
+  --color-Warrior-transparent: rgba(255, 165, 0, 0.3);
+  --color-Fire: #FF4500; /* OrangeRed */
+  --color-Fire-rgb: 255, 69, 0;
+  --color-Fire-transparent: rgba(255, 69, 0, 0.3);
+  --color-Ace: #800080; /* Purple */
+  --color-Ace-rgb: 128, 0, 128;
+  --color-Ace-transparent: rgba(128, 0, 128, 0.3);
+  --color-Hinder: #8B4513; /* SaddleBrown */
+  --color-Hinder-rgb: 139, 69, 19;
+  --color-Hinder-transparent: rgba(139, 69, 19, 0.3);
+  --color-Titan: #2E8B57; /* SeaGreen */
+  --color-Titan-rgb: 46, 139, 87;
+  --color-Titan-transparent: rgba(46, 139, 87, 0.3);
+  --color-Superstar: #FF69B4; /* HotPink */
+  --color-Superstar-rgb: 255, 105, 180;
+  --color-Superstar-transparent: rgba(255, 105, 180, 0.3);
+  --color-Dragon: #B22222; /* FireBrick */
+  --color-Dragon-rgb: 178, 34, 34;
+  --color-Dragon-transparent: rgba(178, 34, 34, 0.3);
+  --color-Building: #A9A9A9; /* DarkGray */
+  --color-Building-rgb: 169, 169, 169;
+  --color-Building-transparent: rgba(169, 169, 169, 0.3);
 }
 
 a {
