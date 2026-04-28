@@ -1,0 +1,132 @@
+[
+  {
+    "name": "Ace1",
+    "trait": "Ace",
+    "count": 2
+  },
+  {
+    "name": "Ace2",
+    "trait": "Ace",
+    "count": 4
+  },
+  {
+    "name": "Assassin1",
+    "trait": "Assassin",
+    "count": 2
+  },
+  {
+    "name": "Assassin2",
+    "trait": "Assassin",
+    "count": 4
+  },
+  {
+    "name": "Clan1",
+    "trait": "Clan",
+    "count": 2
+  },
+  {
+    "name": "Clan2",
+    "trait": "Clan",
+    "count": 4
+  },
+  {
+    "name": "Dragon1",
+    "trait": "Dragon",
+    "count": 2
+  },
+  {
+    "name": "Fire1",
+    "trait": "Fire",
+    "count": 2
+  },
+  {
+    "name": "Goblin1",
+    "trait": "Goblin",
+    "count": 2
+  },
+  {
+    "name": "Goblin2",
+    "trait": "Goblin",
+    "count": 4
+  },
+  {
+    "name": "Hinder1",
+    "trait": "Hinder",
+    "count": 2
+  },
+  {
+    "name": "Hinder2",
+    "trait": "Hinder",
+    "count": 4
+  },
+  {
+    "name": "Marksman1",
+    "trait": "Marksman",
+    "count": 2
+  },
+  {
+    "name": "Marksman2",
+    "trait": "Marksman",
+    "count": 4
+  },
+  {
+    "name": "Noble1",
+    "trait": "Noble",
+    "count": 2
+  },
+  {
+    "name": "Noble2",
+    "trait": "Noble",
+    "count": 4
+  },
+  {
+    "name": "Noble3",
+    "trait": "Noble",
+    "count": 6
+  },
+  {
+    "name": "Superstar1",
+    "trait": "Superstar",
+    "count": 2
+  },
+  {
+    "name": "Tank1",
+    "trait": "Tank",
+    "count": 2
+  },
+  {
+    "name": "Tank2",
+    "trait": "Tank",
+    "count": 4
+  },
+  {
+    "name": "Titan1",
+    "trait": "Titan",
+    "count": 2
+  },
+  {
+    "name": "Undead1",
+    "trait": "Undead",
+    "count": 2
+  },
+  {
+    "name": "Undead2",
+    "trait": "Undead",
+    "count": 4
+  },
+  {
+    "name": "Undead3",
+    "trait": "Undead",
+    "count": 6
+  },
+  {
+    "name": "Warrior1",
+    "trait": "Warrior",
+    "count": 2
+  },
+  {
+    "name": "Warrior2",
+    "trait": "Warrior",
+    "count": 4
+  }
+]

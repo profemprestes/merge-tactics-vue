@@ -1,53 +1,71 @@
 export const mockBuilds = [
   {
-    id: 1,
-    title: "Chapter 19 / Hard",
+    id: "balanced-1",
+    title: "Balanced",
     strategy: "Defensive setup with high sustain. Focus on upgrading the main tank early.",
+    regnant: "elixirloong",
     deck: [
-      { name: "Archer Queen", image: "archer_queen.png" },
-      { name: "Knight", image: "knight.png" },
-      { name: "Musketeer", image: "musketeer.png" },
-      { name: "Skeleton Army", image: "skeleton_army.png" },
-      { name: "Fireball", image: "fireball.png" },
-      { name: "Cannon", image: "cannon.png" },
-      { name: "Ice Spirit", image: "ice_spirit.png" }
+      { name: "Barbarian", image: "barbarian_mt.webp", traits: ["Clan", "Warrior"], cost: 2, stars: 2 },
+      { name: "Giant", image: "giant_mt.png", traits: ["Superstar", "Titan"], cost: 3, stars: 2 },
+      { name: "Prince", image: "prince_mt.webp", traits: ["Noble", "Warrior"], cost: 4, stars: 2 },
+      { name: "Baby Dragon", image: "babydragon_mt.png", traits: ["Dragon", "Fire"], cost: 4, stars: 2 },
+      { name: "Archer Queen", image: "archer_queen.webp", traits: ["Clan", "Superstar"], cost: 5, stars: 2 },
+      { name: "Wizard", image: "wizard_mt.png", traits: ["Hinder", "Fire"], cost: 2, stars: 2 },
+      { name: "Princess", image: "princess_mt.webp", traits: ["Noble", "Hinder"], cost: 4, stars: 2 }
     ],
-    likes: 124,
-    date: "2024-04-25",
-    author: "TacticsMaster"
+    likes: 0,
+    date: "12h ago",
+    author: "wHYsOsERIOUS",
+    authorAvatar: "W",
+    rank: "Gold_II.png",
+    rankScore: "2185",
+    views: 96,
+    comments: 0
   },
   {
-    id: 2,
-    title: "Endless Mode - Wave 50+",
+    id: "cheap-clans",
+    title: "Cheap Clans",
     strategy: "Heavy AoE damage and crowd control. Place executioner near the center.",
+    regnant: "elixirloong",
     deck: [
-      { name: "Executioner", image: "executioner.png" },
-      { name: "Tornado", image: "tornado.png" },
-      { name: "Valkyrie", image: "valkyrie.png" },
-      { name: "Log", image: "the_log.png" },
-      { name: "Ice Wizard", image: "ice_wizard.png" },
-      { name: "Bomb Tower", image: "bomb_tower.png" },
-      { name: "Skeletons", image: "skeletons.png" }
+      { name: "Goblin Machine", image: "goblinmachine_mt.webp", traits: ["Superstar", "Goblin"], cost: 4, stars: 1 },
+      { name: "Valkyrie", image: "valkyrie_mt.webp", traits: ["Tank", "Clan"], cost: 3, stars: 1 },
+      { name: "Barbarian", image: "barbarian_mt.webp", traits: ["Clan", "Warrior"], cost: 2, stars: 1 },
+      { name: "Goblin Demolisher", image: "goblindemolisher_mt.png", traits: ["Goblin", "Warrior"], cost: 3, stars: 1 },
+      { name: "Archer Queen", image: "archer_queen.webp", traits: ["Clan", "Superstar"], cost: 5, stars: 1 },
+      { name: "Dart Goblin", image: "dartgoblin_mt.webp", traits: ["Goblin", "Marksman"], cost: 2, stars: 1 },
+      { name: "Archer", image: "archer_mt.webp", traits: ["Marksman", "Clan"], cost: 2, stars: 1 }
     ],
-    likes: 89,
-    date: "2024-04-20",
-    author: "AoE_King"
+    likes: 0,
+    date: "16h ago",
+    author: "EsTrada",
+    authorAvatar: "E",
+    rank: "Gold_III.png",
+    rankScore: "2530",
+    views: 92,
+    comments: 0
   },
   {
-    id: 3,
-    title: "Fast Cycle Push",
+    id: "009-4x-hinder-fire",
+    title: "#009 - 4x HINDER +DRAGON FIRE",
     strategy: "Constant pressure. Keep cycling low-cost units to overwhelm.",
+    regnant: "elixirloong",
     deck: [
-      { name: "Hog Rider", image: "hog_rider.png" },
-      { name: "Ice Golem", image: "ice_golem.png" },
-      { name: "Musketeer", image: "musketeer.png" },
-      { name: "Skeletons", image: "skeletons.png" },
-      { name: "Ice Spirit", image: "ice_spirit.png" },
-      { name: "Cannon", image: "cannon.png" },
-      { name: "Log", image: "the_log.png" }
+      { name: "Knight", image: "knight_mt.webp", traits: ["Tank", "Noble"], cost: 2, stars: 1 },
+      { name: "Skeleton Dragon", image: "skeletondragons_mt.png", traits: ["Undead", "Dragon"], cost: 2, stars: 1 },
+      { name: "Baby Dragon", image: "babydragon_mt.png", traits: ["Dragon", "Fire"], cost: 4, stars: 1 },
+      { name: "Executioner", image: "executioner_mt.webp", traits: ["Ace", "Hinder"], cost: 3, stars: 1 },
+      { name: "Witch", image: "witch_mt.png", traits: ["Hinder", "Undead"], cost: 4, stars: 1 },
+      { name: "Princess", image: "princess_mt.webp", traits: ["Noble", "Hinder"], cost: 4, stars: 1 },
+      { name: "Wizard", image: "wizard_mt.png", traits: ["Hinder", "Fire"], cost: 2, stars: 1 }
     ],
-    likes: 256,
-    date: "2024-04-28",
-    author: "SpeedRunner2.0"
+    likes: 0,
+    date: "20h ago",
+    author: "lu1st",
+    authorAvatar: "L",
+    rank: "Silver_II.png",
+    rankScore: "1107",
+    views: 54,
+    comments: 0
   }
 ];
