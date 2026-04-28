@@ -56,28 +56,7 @@ const lastSearchConditions = reactive({ // 最後に検索した条件を保持
   teamSize: 0,
 });
 
-const roleTranslations = {
-  'ace': 'As',
-  'assassin': 'Asesino',
-  'avenger': 'Vengador',
-  'fighter': 'Luchador',
-  'clan': 'Clan',
-  'goblin': 'Duende',
-  'tank': 'Tanque',
-  'elite': 'Élite',
-  'shooter': 'Tirador',
-  'thrower': 'Lanzador',
-  'undead': 'No muerto',
-};
-
 function translateSkillName(skillName) {
-  const match = skillName.match(/^([a-z]+)(\d*)$/);
-  if (match) {
-    const rolePart = match[1];
-    const numberPart = match[2];
-    const translatedRole = roleTranslations[rolePart] || rolePart;
-    return translatedRole + numberPart;
-  }
   return skillName;
 }
 

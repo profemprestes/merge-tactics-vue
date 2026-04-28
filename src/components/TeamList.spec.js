@@ -5,8 +5,8 @@ import TeamList from './TeamList.vue';
 describe('TeamList', () => {
   const mockTeams = [
     {
-      units: [{ name: 'Caballero', role: ['elite', 'tank'] }, { name: 'Arqueras', role: ['clan', 'shooter'] }],
-      skills: [{ name: 'elite1', role: 'elite' }, { name: 'clan1', role: 'clan' }],
+      units: [{ name: 'Knight', traits: ['Noble', 'Tank'] }, { name: 'Archer', traits: ['Clan', 'Marksman'] }],
+      skills: [{ name: 'Noble1', trait: 'Noble' }, { name: 'Clan1', trait: 'Clan' }],
     },
   ];
 
@@ -22,7 +22,7 @@ describe('TeamList', () => {
       global,
     });
     expect(wrapper.findAll('.team-table tbody tr').length).toBe(1);
-    expect(wrapper.find('.unit-list').text()).toContain('Caballero');
+    expect(wrapper.find('.unit-list').text()).toContain('Knight');
   });
 
   it('shows a message when no teams are found', () => {
@@ -39,7 +39,7 @@ describe('TeamList', () => {
       props: {
         teams: mockTeams,
         searchConditions: {
-          includedUnits: ['Caballero'],
+          includedUnits: ['Knight'],
           includedSkills: [],
           minSkillCount: 2,
         },
@@ -48,6 +48,6 @@ describe('TeamList', () => {
     });
     expect(wrapper.find('.search-summary').exists()).toBe(true);
     expect(wrapper.find('.search-summary').text()).toContain('Mínimo de habilidades: 2');
-    expect(wrapper.find('.search-summary').text()).toContain('Unidades: Caballero');
+    expect(wrapper.find('.search-summary').text()).toContain('Unidades: Knight');
   });
 });

@@ -9,24 +9,24 @@ describe('generateTeams', () => {
   });
 
   it('should include specified units', () => {
-    const teams = generateTeams({ includedUnits: ['Caballero', 'Arqueras'] });
+    const teams = generateTeams({ includedUnits: ['Knight', 'Archer'] });
     teams.forEach(team => {
-      expect(team.units.some(u => u.name === 'Caballero')).toBe(true);
-      expect(team.units.some(u => u.name === 'Arqueras')).toBe(true);
+      expect(team.units.some(u => u.name === 'Knight')).toBe(true);
+      expect(team.units.some(u => u.name === 'Archer')).toBe(true);
     });
   });
 
   it('should filter by included skills', () => {
-    const teams = generateTeams({ includedSkills: ['ace1'] });
+    const teams = generateTeams({ includedSkills: ['Ace1'] });
     teams.forEach(team => {
-      expect(team.skills.some(s => s.name === 'ace1')).toBe(true);
+      expect(team.skills.some(s => s.name === 'Ace1')).toBe(true);
     });
   });
 
   it('should filter by minimum skill count', () => {
-    const teams = generateTeams({ minSkillCount: 7 });
+    const teams = generateTeams({ minSkillCount: 5 });
     teams.forEach(team => {
-      expect(team.skills.length).toBeGreaterThanOrEqual(7);
+      expect(team.skills.length).toBeGreaterThanOrEqual(5);
     });
   });
 
