@@ -57,23 +57,27 @@ const lastSearchConditions = reactive({ // 最後に検索した条件を保持
 });
 
 const roleTranslations = {
-  'ace': 'As',
-  'assassin': 'Asesino',
-  'avenger': 'Vengador',
-  'fighter': 'Luchador',
-  'clan': 'Clan',
-  'goblin': 'Duende',
-  'tank': 'Tanque',
-  'elite': 'Élite',
-  'shooter': 'Tirador',
-  'thrower': 'Lanzador',
-  'undead': 'No muerto',
+  'Noble': 'Noble',
+  'Clan': 'Clan',
+  'Goblin': 'Duende',
+  'Undead': 'No muerto',
+  'Fire': 'Fuego',
+  'Ace': 'As',
+  'Titan': 'Titán',
+  'Tank': 'Tanque',
+  'Marksman': 'Tirador',
+  'Assassin': 'Asesino',
+  'Warrior': 'Luchador',
+  'Dragon': 'Dragón',
+  'Hinder': 'Estorbo',
+  'Superstar': 'Superestrella',
+  'Building': 'Estructura'
 };
 
 function translateSkillName(skillName) {
   const match = skillName.match(/^([a-z]+)(\d*)$/);
   if (match) {
-    const rolePart = match[1];
+    const rolePart = match[1].charAt(0).toUpperCase() + match[1].slice(1);
     const numberPart = match[2];
     const translatedRole = roleTranslations[rolePart] || rolePart;
     return translatedRole + numberPart;
