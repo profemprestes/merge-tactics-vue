@@ -1,7 +1,18 @@
 <template>
-  <div>
+  <div id="app-wrapper">
     <TheHeader />
-    <main class="main-container">
+    <main class="main-container builds-layout">
+      
+      <!-- Custom Header imitating the provided snippet -->
+      <div class="builds-header">
+        <div class="title-container">
+          <div class="title-bg-gold"></div>
+          <div class="title-bg-purple">
+            <h1>Merge Tactics Builds</h1>
+          </div>
+        </div>
+      </div>
+
       <div class="sidebar">
         <h2>Ajustes</h2>
         <div class="settings-group">
@@ -95,70 +106,149 @@ function resetConditions() {
 </script>
 
 <style scoped>
-#app {
+#app-wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   font-family: 'Inter', sans-serif;
+  align-items: center;
+  padding: 20px;
 }
 
-.main-container {
+.builds-layout {
   display: flex;
   flex-direction: column;
-  flex: 1;
+  max-width: 1152px;
+  width: 100%;
+  margin: 0 auto;
+  gap: 1rem;
+  padding: 1.25rem;
+  background-color: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-sizing: border-box;
 }
 
+/* Custom Header specific styles */
+.builds-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.title-container {
+  position: relative;
+  margin-bottom: 1rem;
+  width: fit-content;
+}
+
+.title-bg-gold {
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  top: -2px;
+  height: calc(100% + 4px);
+  margin-left: -1.25rem;
+  width: calc(100% + 25px);
+  background: linear-gradient(to right, #facc15, #fbbf24, #facc15); /* Yellow-400 to Amber-400 */
+  clip-path: polygon(0 0, 100% 0, 100% 0, 94.9% 50%, 100% 100%, 0 100%);
+}
+
+.title-bg-purple {
+  position: relative;
+  z-index: 10;
+  display: inline-block;
+  margin-left: -1.25rem;
+  padding: 0.5rem 3rem 0.5rem 1.25rem;
+  background: linear-gradient(to right, #7e22ce, #9333ea, #a855f7); /* Purple-700 to Purple-500 */
+  color: white;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  clip-path: polygon(0 0, 100% 0, 100% 0, 95% 50%, 100% 100%, 0 100%);
+}
+
+.title-bg-purple h1 {
+  margin: 0;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+  text-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
+  /* font-family: 'Clash Display', sans-serif; - si estuviera disponible */
+}
+
+/* Sidebar and general styles */
 .sidebar {
-  padding: 20px;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #ffffff;
 }
 
 .content {
-  padding: 20px;
+  padding: 0;
+  margin-top: 20px;
 }
 
 .actions-between-sections {
-  margin: 20px;
+  margin: 20px 0;
   display: flex;
-  gap: 10px;
+  gap: 15px;
 }
 
 .generate-button, .reset-button {
   flex: 1;
   padding: 12px 20px;
   border: none;
-  border-radius: 8px;
+  border-radius: 0.375rem; /* rounded-md */
   cursor: pointer;
-  font-size: 1.1em;
+  font-size: 1rem;
   font-weight: 600;
+  text-transform: uppercase;
   transition: all 0.3s ease;
   outline: none;
-  color: #ffffff;
+  color: #000000;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .generate-button {
-  background-color: var(--color-accent-green);
+  /* Using the button gradient from the user's request */
+  background: linear-gradient(to bottom, #f9de6a, #ea812a);
 }
 
-.generate-button:hover {
+.generate-button:hover:not(:disabled) {
   filter: brightness(1.1);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.generate-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 
 .reset-button {
-  background-color: var(--danger-color);
+  background: linear-gradient(to bottom, #b2aeb3, #54416d);
+  color: #ffffff;
 }
 
 .reset-button:hover {
-  background-color: var(--danger-color-hover);
+  filter: brightness(1.1);
 }
 
 .settings-group {
   display: flex;
   gap: 20px;
   margin-bottom: 20px;
-  background-color: var(--color-purple-dark);
-  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 15px;
   border-radius: 8px;
-  border: 1px solid var(--color-purple-light);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .min-skill-count-setting, .team-size-setting {
@@ -169,58 +259,34 @@ function resetConditions() {
 .min-skill-count-setting label, .team-size-setting label {
   margin-right: 10px;
   font-weight: 500;
+  color: #ffffff;
 }
 
 .min-skill-count-setting input, .team-size-setting input {
   width: 60px;
   padding: 8px;
-  background-color: var(--color-purple-deep);
+  background-color: rgba(0, 0, 0, 0.3);
   color: #ffffff;
-  border: 1px solid var(--color-neutral);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 4px;
   text-align: center;
 }
 
 .min-skill-count-setting input:focus, .team-size-setting input:focus {
   outline: none;
-  border-color: var(--color-purple-light);
+  border-color: var(--color-accent-gold);
 }
 
-.selected-items-display {
-  margin-bottom: 20px;
-  padding: 15px;
-  background-color: var(--color-purple-dark);
-  border: 1px solid var(--color-neutral);
-  border-radius: 8px;
-}
-
-.selected-items-display h4 {
-  margin-top: 0;
-  margin-bottom: 10px;
-  font-size: 1em;
-}
-
-.item-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.item-tag {
-  display: inline-block;
-  padding: 5px 10px;
-  border-radius: 15px;
-  font-size: 0.9em;
-  font-weight: 500;
-}
-
-.item-tag.include {
-  background-color: var(--color-accent-green);
-  color: #ffffff;
-}
-
-.item-tag.exclude {
-  background-color: var(--color-accent-orange);
-  color: #ffffff;
+@media (max-width: 768px) {
+  .builds-layout {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+  
+  .title-bg-purple h1 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
 }
 </style>
