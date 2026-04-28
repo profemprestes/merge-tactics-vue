@@ -5,6 +5,6 @@ import TheHeader from './TheHeader.vue';
 describe('TheHeader', () => {
   it('renders the header with the correct title', () => {
     const wrapper = mount(TheHeader);
-    expect(wrapper.find('h1').text()).toBe('クラロワ マージタクティクス チームビルダー');
+    expect(wrapper.find('h1').text()).toBe('Clash Royale: Constructor de equipos de Tácticas de Fusión');
   });
 });

@@ -4,7 +4,7 @@ import { Icon } from '@iconify/vue';
 
 <template>
   <header class="header">
-    <h1>クラロワ マージタクティクス チームビルダー</h1>
+    <h1>Clash Royale: Constructor de equipos de Tácticas de Fusión</h1>
     <a href="https://github.com/wai-doi/merge-tactics-vue" target="_blank" rel="noopener noreferrer" class="github-link">
       <Icon icon="fa:github" />
     </a>

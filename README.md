@@ -1,5 +1,5 @@
 # Merge Tactics Vue
 
-[クラッシュ・ロワイヤル](https://store.supercell.com/ja/clashroyale)のマージタクティクスにおいて、チーム編成の検討を支援するツールです。
+Una herramienta para ayudar a planificar la formación de equipos en Tácticas de Fusión de [Clash Royale](https://store.supercell.com/es/clashroyale).
 
-[デモはこちら](https://wai-doi.github.io/merge-tactics-vue/)
+[Puedes ver una demo aquí](https://wai-doi.github.io/merge-tactics-vue/)

@@ -9,10 +9,10 @@ describe('generateTeams', () => {
   });
 
   it('should include specified units', () => {
-    const teams = generateTeams({ includedUnits: ['ナイト', 'アーチャー'] });
+    const teams = generateTeams({ includedUnits: ['Caballero', 'Arqueras'] });
     teams.forEach(team => {
-      expect(team.units.some(u => u.name === 'ナイト')).toBe(true);
-      expect(team.units.some(u => u.name === 'アーチャー')).toBe(true);
+      expect(team.units.some(u => u.name === 'Caballero')).toBe(true);
+      expect(team.units.some(u => u.name === 'Arqueras')).toBe(true);
     });
   });
 

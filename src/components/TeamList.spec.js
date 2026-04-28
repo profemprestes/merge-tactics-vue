@@ -5,7 +5,7 @@ import TeamList from './TeamList.vue';
 describe('TeamList', () => {
   const mockTeams = [
     {
-      units: [{ name: 'ナイト', role: ['elite', 'tank'] }, { name: 'アーチャー', role: ['clan', 'shooter'] }],
+      units: [{ name: 'Caballero', role: ['elite', 'tank'] }, { name: 'Arqueras', role: ['clan', 'shooter'] }],
       skills: [{ name: 'elite1', role: 'elite' }, { name: 'clan1', role: 'clan' }],
     },
   ];
@@ -22,7 +22,7 @@ describe('TeamList', () => {
       global,
     });
     expect(wrapper.findAll('.team-table tbody tr').length).toBe(1);
-    expect(wrapper.find('.unit-list').text()).toContain('ナイト');
+    expect(wrapper.find('.unit-list').text()).toContain('Caballero');
   });
 
   it('shows a message when no teams are found', () => {
@@ -31,7 +31,7 @@ describe('TeamList', () => {
       global,
     });
     expect(wrapper.find('.no-results').exists()).toBe(true);
-    expect(wrapper.text()).toContain('条件に合うチームが見つかりませんでした');
+    expect(wrapper.text()).toContain('No se encontraron equipos que coincidan con las condiciones');
   });
 
   it('displays search summary', () => {
@@ -39,7 +39,7 @@ describe('TeamList', () => {
       props: {
         teams: mockTeams,
         searchConditions: {
-          includedUnits: ['ナイト'],
+          includedUnits: ['Caballero'],
           includedSkills: [],
           minSkillCount: 2,
         },
@@ -47,7 +47,7 @@ describe('TeamList', () => {
       global,
     });
     expect(wrapper.find('.search-summary').exists()).toBe(true);
-    expect(wrapper.find('.search-summary').text()).toContain('最低スキル数: 2');
-    expect(wrapper.find('.search-summary').text()).toContain('ユニット: ナイト');
+    expect(wrapper.find('.search-summary').text()).toContain('Mínimo de habilidades: 2');
+    expect(wrapper.find('.search-summary').text()).toContain('Unidades: Caballero');
   });
 });
