@@ -1,22 +1,22 @@
 <template>
   <div>
-    <h2>生成結果 ({{ teams.length }}件)</h2>
+    <h2>Resultados ({{ teams.length }})</h2>
     <div v-if="searchSummary.length > 0" class="search-summary">
-      <p>検索条件:</p>
+      <p>Ajustes:</p>
       <ul>
         <li v-for="(part, index) in searchSummary" :key="index">{{ part }}</li>
       </ul>
     </div>
     <div v-if="teams.length === 0" class="no-results">
-      <p>条件に合うチームが見つかりませんでした。条件を変更して再度お試しください。</p>
+      <p>No se encontraron equipos que coincidan con las condiciones. Modifique los ajustes e inténtelo de nuevo.</p>
     </div>
     <div v-else class="team-table-container">
       <table class="team-table">
         <thead>
           <tr>
-            <th>スキル数</th>
-            <th>スキル</th>
-            <th>ユニット</th>
+            <th>Cantidad</th>
+            <th>Habilidades</th>
+            <th>Unidades</th>
           </tr>
         </thead>
         <tbody>
@@ -63,16 +63,16 @@ const searchSummary = computed(() => {
   const { includedUnits, includedSkills, minSkillCount, teamSize } = props.searchConditions;
 
   if (minSkillCount > 0) {
-    parts.push(`最低スキル数: ${minSkillCount}`);
+    parts.push(`Mínimo de habilidades: ${minSkillCount}`);
   }
   if (teamSize > 0) {
-    parts.push(`チームサイズ: ${teamSize}`);
+    parts.push(`Unidades del equipo: ${teamSize}`);
   }
   if (includedSkills.length > 0) {
-    parts.push(`スキル: ${includedSkills.map(translateSkillName).join(', ')}`);
+    parts.push(`Habilidades: ${includedSkills.map(translateSkillName).join(', ')}`);
   }
   if (includedUnits.length > 0) {
-    parts.push(`ユニット: ${includedUnits.join(', ')}`);
+    parts.push(`Unidades: ${includedUnits.join(', ')}`);
   }
 
   if (parts.length > 0) {
@@ -87,17 +87,17 @@ const orderedRoles = ref([
 ]);
 
 const roleTranslations = {
-  'ace': 'エース',
-  'assassin': 'アサシン',
-  'avenger': 'アベンジャー',
-  'fighter': 'ファイター',
-  'clan': 'クラン',
-  'goblin': 'ゴブリン',
-  'tank': 'タンク',
-  'elite': 'エリート',
-  'shooter': 'シューター',
-  'thrower': 'スロワー',
-  'undead': 'アンデッド',
+  'ace': 'As',
+  'assassin': 'Asesino',
+  'avenger': 'Vengador',
+  'fighter': 'Luchador',
+  'clan': 'Clan',
+  'goblin': 'Duende',
+  'tank': 'Tanque',
+  'elite': 'Élite',
+  'shooter': 'Tirador',
+  'thrower': 'Lanzador',
+  'undead': 'No muerto',
 };
 
 function translateRole(roleName) {

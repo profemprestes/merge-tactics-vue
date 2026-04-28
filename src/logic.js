@@ -4,26 +4,26 @@ export const ROLE_ORDER = [
 ];
 
 export const UNIT_ATTRIBUTES = [
-  { name: 'ナイト', role: ['elite', 'tank'] },
-  { name: 'アーチャー', role: ['clan', 'shooter'] },
-  { name: 'ゴブリン', role: ['goblin', 'assassin'] },
-  { name: '槍ゴブリン', role: ['goblin', 'thrower'] },
-  { name: 'ボンバー', role: ['undead', 'thrower'] },
-  { name: 'バーバーリアン', role: ['clan', 'fighter'] },
-  { name: 'バルキリー', role: ['clan', 'avenger'] },
-  { name: 'ペッカ', role: ['ace', 'tank'] },
-  { name: 'プリンス', role: ['elite', 'fighter'] },
-  { name: '巨大スケルトン', role: ['undead', 'fighter'] },
-  { name: '吹矢ゴブリン', role: ['goblin', 'shooter'] },
-  { name: '執行人ファルチェ', role: ['ace', 'thrower'] },
-  { name: 'プリンセス', role: ['elite', 'shooter'] },
-  { name: 'メガナイト', role: ['ace', 'fighter'] },
-  { name: 'ロイヤルゴースト', role: ['undead', 'assassin'] },
-  { name: 'アサシンユーノ', role: ['ace', 'avenger'] },
-  { name: 'ゴブリンマシン', role: ['goblin', 'tank'] },
-  { name: 'スケルトンキング', role: ['undead', 'tank'] },
-  { name: 'ゴールドナイト', role: ['elite', 'assassin'] },
-  { name: 'アーチャークイーン', role: ['clan', 'avenger'] },
+  { name: 'Caballero', role: ['elite', 'tank'] },
+  { name: 'Arqueras', role: ['clan', 'shooter'] },
+  { name: 'Duendes', role: ['goblin', 'assassin'] },
+  { name: 'Duendes con lanza', role: ['goblin', 'thrower'] },
+  { name: 'Bombardero', role: ['undead', 'thrower'] },
+  { name: 'Bárbaros', role: ['clan', 'fighter'] },
+  { name: 'Valquiria', role: ['clan', 'avenger'] },
+  { name: 'P.E.K.K.A', role: ['ace', 'tank'] },
+  { name: 'Príncipe', role: ['elite', 'fighter'] },
+  { name: 'Esqueleto gigante', role: ['undead', 'fighter'] },
+  { name: 'Duende lanzadardos', role: ['goblin', 'shooter'] },
+  { name: 'Verdugo', role: ['ace', 'thrower'] },
+  { name: 'Princesa', role: ['elite', 'shooter'] },
+  { name: 'Megacaballero', role: ['ace', 'fighter'] },
+  { name: 'Fantasma real', role: ['undead', 'assassin'] },
+  { name: 'Bandida', role: ['ace', 'avenger'] },
+  { name: 'Máquina duende', role: ['goblin', 'tank'] },
+  { name: 'Rey esqueleto', role: ['undead', 'tank'] },
+  { name: 'Caballero dorado', role: ['elite', 'assassin'] },
+  { name: 'Reina arquera', role: ['clan', 'avenger'] },
 ];
 
 export const SKILL_CONDITIONS = [
@@ -47,7 +47,7 @@ export const SKILL_CONDITIONS = [
   { name: 'undead2', role: 'undead', count: 4 },
 ];
 
-// 組み合わせを生成するジェネレータ関数
+// Generador de combinaciones
 function* combinations(array, k) {
   const n = array.length;
   if (k < 0 || k > n) return;
@@ -76,33 +76,33 @@ export function generateTeams(options) {
     includedUnits = [],
     includedSkills = [],
     minSkillCount = 5,
-    teamSize = 6, // デフォルト値を6に設定
+    teamSize = 6, // Tamaño del equipo por defecto a 6
   } = options;
 
-  // 実際に含めるユニットオブジェクト
+  // Unidades explícitamente incluidas
   const actualIncludedUnits = includedUnits.map(name => UNIT_ATTRIBUTES.find(u => u.name === name));
 
-  // 組み合わせ生成の対象となるユニットプール
+  // Conjunto de unidades combinables (excluyendo las ya seleccionadas)
   const combinableUnits = UNIT_ATTRIBUTES.filter(unit =>
-    !includedUnits.includes(unit.name)    // 既に含める指定されたユニットではない
+    !includedUnits.includes(unit.name)
   );
 
-  // 残りのユニットから選ぶ数
+  // Número de unidades a elegir del conjunto combinable
   const unitsToPick = teamSize - actualIncludedUnits.length;
 
-  // 選択するユニット数が負になる、または選択可能なユニット数を超える場合は、有効な組み合わせがない
+  // Retornar vacío si la selección es inválida
   if (unitsToPick < 0 || unitsToPick > combinableUnits.length) {
     return [];
   }
 
   let teams = [];
 
-  // 残りのユニットから組み合わせを生成
+  // Generar combinaciones de unidades restantes
   for (const unitCombination of combinations(combinableUnits, unitsToPick)) {
-    // 明示的に含めるユニットと生成された組み合わせを結合
+    // Unir unidades explícitas con la combinación generada
     const currentUnits = [...actualIncludedUnits, ...unitCombination];
 
-    // チームサイズが正しいことを確認（念のため）
+    // Verificar el tamaño del equipo
     if (currentUnits.length !== teamSize) {
         continue;
     }
@@ -110,7 +110,7 @@ export function generateTeams(options) {
     const roles = currentUnits.flatMap(u => u.role);
     const skills = SKILL_CONDITIONS.filter(cond => roles.filter(r => r === cond.role).length >= cond.count);
 
-    // フィルタリング条件
+    // Filtrar equipos por condiciones de habilidades
     if (skills.length < minSkillCount) continue;
     if (includedSkills.some(skillName => !skills.find(s => s.name === skillName))) continue;
 
@@ -121,7 +121,7 @@ export function generateTeams(options) {
     });
   }
 
-  // スキル数でソート
+  // Ordenar equipos por número de habilidades
   teams.sort((a, b) => b.skills.length - a.skills.length);
 
   return teams.slice(0, 50);

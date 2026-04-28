@@ -3,14 +3,14 @@
     <TheHeader />
     <main class="main-container">
       <div class="sidebar">
-        <h2>条件設定</h2>
+        <h2>Ajustes</h2>
         <div class="settings-group">
           <div class="team-size-setting">
-            <label for="teamSize">チームユニット数:</label>
+            <label for="teamSize">Unidades del equipo:</label>
             <input type="number" id="teamSize" v-model.number="teamSize" min="1" max="10">
           </div>
           <div class="min-skill-count-setting">
-            <label for="minSkillCount">最低発動スキル数:</label>
+            <label for="minSkillCount">Mínimo de habilidades:</label>
             <input type="number" id="minSkillCount" v-model.number="minSkillCount" min="1" max="10">
           </div>
         </div>
@@ -23,8 +23,8 @@
         />
       </div>
       <div class="actions-between-sections">
-        <button class="generate-button" @click="generateTeamHandler" :disabled="isGenerating">{{ isGenerating ? '生成中...' : 'チームを生成する' }}</button>
-        <button class="reset-button" @click="resetConditions">条件をリセット</button>
+        <button class="generate-button" @click="generateTeamHandler" :disabled="isGenerating">{{ isGenerating ? 'Generando...' : 'Generar equipo' }}</button>
+        <button class="reset-button" @click="resetConditions">Restablecer ajustes</button>
       </div>
       <div class="content">
         <TeamList
@@ -57,17 +57,17 @@ const lastSearchConditions = reactive({ // 最後に検索した条件を保持
 });
 
 const roleTranslations = {
-  'ace': 'エース',
-  'assassin': 'アサシン',
-  'avenger': 'アベンジャー',
-  'fighter': 'ファイター',
-  'clan': 'クラン',
-  'goblin': 'ゴブリン',
-  'tank': 'タンク',
-  'elite': 'エリート',
-  'shooter': 'シューター',
-  'thrower': 'スロワー',
-  'undead': 'アンデッド',
+  'ace': 'As',
+  'assassin': 'Asesino',
+  'avenger': 'Vengador',
+  'fighter': 'Luchador',
+  'clan': 'Clan',
+  'goblin': 'Duende',
+  'tank': 'Tanque',
+  'elite': 'Élite',
+  'shooter': 'Tirador',
+  'thrower': 'Lanzador',
+  'undead': 'No muerto',
 };
 
 function translateSkillName(skillName) {

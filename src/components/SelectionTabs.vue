@@ -1,8 +1,8 @@
 <template>
   <div class="selection-tabs-container">
     <div class="tabs">
-      <div class="tab-item" :class="{ active: activeTab === 'includeUnits' }" @click="activeTab = 'includeUnits'">ユニット選択</div>
-      <div class="tab-item" :class="{ active: activeTab === 'includeSkills' }" @click="activeTab = 'includeSkills'">スキル選択</div>
+      <div class="tab-item" :class="{ active: activeTab === 'includeUnits' }" @click="activeTab = 'includeUnits'">Selección de unidades</div>
+      <div class="tab-item" :class="{ active: activeTab === 'includeSkills' }" @click="activeTab = 'includeSkills'">Selección de habilidades</div>
     </div>
 
     <div class="selection-list">
@@ -86,25 +86,25 @@ const allUnits = ref(UNIT_ATTRIBUTES);
 const allSkills = ref(SKILL_CONDITIONS);
 
 const roleTranslations = {
-  'ace': 'エース',
-  'assassin': 'アサシン',
-  'avenger': 'アベンジャー',
-  'fighter': 'ファイター',
-  'clan': 'クラン',
-  'goblin': 'ゴブリン',
-  'tank': 'タンク',
-  'elite': 'エリート',
-  'shooter': 'シューター',
-  'thrower': 'スロワー',
-  'undead': 'アンデッド',
+  'ace': 'As',
+  'assassin': 'Asesino',
+  'avenger': 'Vengador',
+  'fighter': 'Luchador',
+  'clan': 'Clan',
+  'goblin': 'Duende',
+  'tank': 'Tanque',
+  'elite': 'Élite',
+  'shooter': 'Tirador',
+  'thrower': 'Lanzador',
+  'undead': 'No muerto',
 };
 
 const columnRoles = ['tank', 'fighter', 'assassin', 'shooter', 'thrower', 'avenger'];
 const rowRoles = ['elite', 'clan', 'ace', 'undead', 'goblin'];
 
-const orderedRoles = ROLE_ORDER; // logic.jsからインポートしたROLE_ORDERを使用
+const orderedRoles = ROLE_ORDER; // Usar ROLE_ORDER importado de logic.js
 
-// ロールごとにユニットをグループ化
+// Agrupar unidades por rol
 const unitsByRoleIntersection = computed(() => {
   const grouped = {};
   rowRoles.forEach(rowRole => {
@@ -118,7 +118,7 @@ const unitsByRoleIntersection = computed(() => {
   return grouped;
 });
 
-// ロールごとにスキルをグループ化
+// Agrupar habilidades por rol
 const skillsByRole = computed(() => {
   const grouped = {};
   orderedRoles.forEach(role => {
