@@ -28,6 +28,6 @@ describe('SelectionTabs', () => {
     await wrapper.find('.tab-item:not(.active)').trigger('click');
     await wrapper.find('.skill-item').trigger('click');
     expect(wrapper.emitted('update:includedSkills')).toBeTruthy();
-    expect(wrapper.emitted('update:includedSkills')[0][0]).toEqual(['Tank1']);
+    expect(wrapper.emitted('update:includedSkills')[0][0]).toEqual(['Ace1']);
   });
 });

@@ -85,8 +85,8 @@ const activeTab = ref('includeUnits'); // Default active tab
 const allUnits = ref(UNIT_ATTRIBUTES);
 const allSkills = ref(SKILL_CONDITIONS);
 
-const columnRoles = ['Tank', 'Marksman', 'Assassin', 'Warrior', 'Dragon', 'Hinder', 'Superstar', 'Building'];
-const rowRoles = ['Noble', 'Clan', 'Goblin', 'Undead', 'Fire', 'Titan', 'Ace', 'Building'];
+const columnRoles = ['Tank', 'Marksman', 'Assassin', 'Warrior', 'Dragon', 'Hinder', 'Superstar'];
+const rowRoles = ['Noble', 'Clan', 'Goblin', 'Undead', 'Fire', 'Titan', 'Ace'];
 
 const orderedRoles = ROLE_ORDER; // Usar ROLE_ORDER importado de logic.js
 

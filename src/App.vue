@@ -46,7 +46,7 @@ import { generateTeams, UNIT_ATTRIBUTES, SKILL_CONDITIONS } from './logic.js';
 const includedUnits = ref([]);
 const includedSkills = ref([]);
 const minSkillCount = ref(5);
-const teamSize = ref(6); // デフォルトのチームユニット数を6に設定
+const teamSize = ref(7); // デフォルトのチームユニット数を7に設定
 const generatedTeams = ref([]);
 const isGenerating = ref(false); // 生成中かどうかを示す状態
 const lastSearchConditions = reactive({ // 最後に検索した条件を保持
@@ -83,7 +83,7 @@ function resetConditions() {
   includedUnits.value = [];
   includedSkills.value = [];
   minSkillCount.value = 5; // デフォルト値に戻す
-  teamSize.value = 6; // チームユニット数をデフォルト値に戻す
+  teamSize.value = 7; // チームユニット数をデフォルト値に戻す
   generatedTeams.value = []; // 結果もクリア
 
   // 検索条件もリセット
