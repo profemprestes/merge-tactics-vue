@@ -5,29 +5,54 @@
       <div class="settings-group">
         <div class="team-size-setting">
           <label for="teamSize">Unidades del equipo:</label>
-          <input type="number" id="teamSize" v-model.number="teamSize" min="1" max="10">
+          <input
+            id="teamSize"
+            v-model.number="teamSize"
+            type="number"
+            min="1"
+            max="10"
+          >
         </div>
         <div class="min-skill-count-setting">
           <label for="minSkillCount">Mínimo de habilidades:</label>
-          <input type="number" id="minSkillCount" v-model.number="minSkillCount" min="1" max="10">
+          <input
+            id="minSkillCount"
+            v-model.number="minSkillCount"
+            type="number"
+            min="1"
+            max="10"
+          >
         </div>
       </div>
 
       <SelectionTabs
-        :includedUnits="includedUnits"
-        @update:includedUnits="val => includedUnits = val"
-        :includedSkills="includedSkills"
-        @update:includedSkills="val => includedSkills = val"
+        :included-units="includedUnits"
+        :included-skills="includedSkills"
+        @update:included-units="val => includedUnits = val"
+        @update:included-skills="val => includedSkills = val"
       />
     </div>
     <div class="actions-between-sections">
-      <button class="generate-button" @click="generateTeamHandler" :disabled="isGenerating">{{ isGenerating ? 'Generando...' : 'Generar equipo' }}</button>
-      <button class="reset-button" @click="resetConditions">Restablecer ajustes</button>
+      <button
+        class="generate-button"
+        :disabled="isGenerating"
+        aria-label="Generar equipo"
+        @click="generateTeamHandler"
+      >
+        {{ isGenerating ? 'Generando...' : 'Generar equipo' }}
+      </button>
+      <button
+        class="reset-button"
+        aria-label="Restablecer ajustes"
+        @click="resetConditions"
+      >
+        Restablecer ajustes
+      </button>
     </div>
     <div class="content">
       <TeamList
         :teams="generatedTeams"
-        :searchConditions="lastSearchConditions"
+        :search-conditions="lastSearchConditions"
       />
     </div>
   </main>

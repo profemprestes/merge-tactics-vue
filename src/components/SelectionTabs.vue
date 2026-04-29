@@ -1,17 +1,45 @@
 <template>
   <div class="selection-tabs-container">
-    <div class="tabs">
-      <div class="tab-item" :class="{ active: activeTab === 'includeUnits' }" @click="activeTab = 'includeUnits'">Selección de unidades</div>
-      <div class="tab-item" :class="{ active: activeTab === 'includeSkills' }" @click="activeTab = 'includeSkills'">Selección de habilidades</div>
+    <div
+      class="tabs"
+      role="tablist"
+    >
+      <div
+        class="tab-item"
+        :class="{ active: activeTab === 'includeUnits' }"
+        role="tab"
+        tabindex="0"
+        :aria-selected="activeTab === 'includeUnits'"
+        @click="activeTab = 'includeUnits'"
+        @keydown.enter="activeTab = 'includeUnits'"
+        @keydown.space.prevent="activeTab = 'includeUnits'"
+      >
+        Selección de unidades
+      </div>
+      <div
+        class="tab-item"
+        :class="{ active: activeTab === 'includeSkills' }"
+        role="tab"
+        tabindex="0"
+        :aria-selected="activeTab === 'includeSkills'"
+        @click="activeTab = 'includeSkills'"
+        @keydown.enter="activeTab = 'includeSkills'"
+        @keydown.space.prevent="activeTab = 'includeSkills'"
+      >
+        Selección de habilidades
+      </div>
     </div>
 
     <div class="selection-list">
-      <div v-if="activeTab === 'includeUnits'" class="tab-content-include-units">
+      <div
+        v-if="activeTab === 'includeUnits'"
+        class="tab-content-include-units"
+      >
         <div class="unit-selection-table-container">
           <table class="unit-selection-table">
             <thead>
               <tr>
-                <th></th>
+                <th />
                 <th
                   v-for="colRole in columnRoles"
                   :key="colRole"
@@ -22,23 +50,34 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="rowRole in rowRoles" :key="rowRole">
+              <tr
+                v-for="rowRole in rowRoles"
+                :key="rowRole"
+              >
                 <th
                   :class="[rowRole]"
                 >
                   {{ translateRoleName(rowRole) }}
                 </th>
-                <td v-for="colRole in columnRoles" :key="colRole">
+                <td
+                  v-for="colRole in columnRoles"
+                  :key="colRole"
+                >
                   <div class="unit-cell-content">
                     <div
-                    v-for="unit in unitsByRoleIntersection[rowRole][colRole]"
-                    :key="unit.name"
-                    class="unit-item"
-                    :class="{ 'selected-item': isSelected(unit.name, 'includeUnits') }"
-                    @click="toggleSelection(unit.name, 'includeUnits')"
-                  >
-                    {{ unit.name }}
-                  </div>
+                      v-for="unit in unitsByRoleIntersection[rowRole][colRole]"
+                      :key="unit.name"
+                      class="unit-item"
+                      :class="{ 'selected-item': isSelected(unit.name, 'includeUnits') }"
+                      role="button"
+                      tabindex="0"
+                      :aria-pressed="isSelected(unit.name, 'includeUnits')"
+                      @click="toggleSelection(unit.name, 'includeUnits')"
+                      @keydown.enter="toggleSelection(unit.name, 'includeUnits')"
+                      @keydown.space.prevent="toggleSelection(unit.name, 'includeUnits')"
+                    >
+                      {{ unit.name }}
+                    </div>
                   </div>
                 </td>
               </tr>
@@ -47,17 +86,32 @@
         </div>
       </div>
 
-      <div v-if="activeTab === 'includeSkills'" class="tab-content-include-skills">
+      <div
+        v-if="activeTab === 'includeSkills'"
+        class="tab-content-include-skills"
+      >
         <div class="skill-selection-grid">
-          <div v-for="role in orderedRoles" :key="role" class="skill-role-group" :class="[role]">
-            <h5 :class="[role]">{{ translateRoleName(role) }}</h5>
+          <div
+            v-for="role in orderedRoles"
+            :key="role"
+            class="skill-role-group"
+            :class="[role]"
+          >
+            <h5 :class="[role]">
+              {{ translateRoleName(role) }}
+            </h5>
             <div class="skill-items">
               <div
                 v-for="skill in skillsByRole[role]"
                 :key="skill.name"
                 class="skill-item"
                 :class="{ 'selected-item': isSelected(skill.name, 'includeSkills') }"
+                role="button"
+                tabindex="0"
+                :aria-pressed="isSelected(skill.name, 'includeSkills')"
                 @click="toggleSelection(skill.name, 'includeSkills')"
+                @keydown.enter="toggleSelection(skill.name, 'includeSkills')"
+                @keydown.space.prevent="toggleSelection(skill.name, 'includeSkills')"
               >
                 {{ translateSkillName(skill.name) }}
               </div>
