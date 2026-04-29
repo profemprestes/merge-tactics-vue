@@ -1,29 +1,78 @@
 <template>
   <div class="team-list-container">
     <div class="header-section">
-      <h2 class="section-title">Equipos Recomendados <span class="badge">{{ teams.length }}</span></h2>
-      <div v-if="searchSummary.length > 0" class="search-summary">
+      <h2 class="section-title">
+        Equipos Recomendados <span class="badge">{{ teams.length }}</span>
+      </h2>
+      <div
+        v-if="searchSummary.length > 0"
+        class="search-summary"
+      >
         <span class="summary-label">Filtros:</span>
         <div class="summary-tags">
-          <span class="summary-tag" v-for="(part, index) in searchSummary" :key="index">{{ part }}</span>
+          <span
+            v-for="(part, index) in searchSummary"
+            :key="index"
+            class="summary-tag"
+          >{{ part }}</span>
         </div>
       </div>
     </div>
 
-    <div v-if="teams.length === 0" class="no-results">
+    <div
+      v-if="teams.length === 0"
+      class="no-results"
+    >
       <div class="no-results-content">
-        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-empty"><circle cx="12" cy="12" r="10"></circle><path d="m4.9 4.9 14.2 14.2"></path></svg>
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="48"
+          height="48"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon-empty"
+        ><circle
+          cx="12"
+          cy="12"
+          r="10"
+        /><path d="m4.9 4.9 14.2 14.2" /></svg>
         <p>No se encontraron equipos que coincidan con las condiciones.</p>
         <span class="hint">Modifique los ajustes e inténtelo de nuevo.</span>
       </div>
     </div>
     
-    <div v-else class="teams-grid">
-      <div class="team-card" v-for="(team, index) in teams" :key="index">
+    <div
+      v-else
+      class="teams-grid"
+    >
+      <div
+        v-for="(team, index) in teams"
+        :key="index"
+        class="team-card"
+      >
         <div class="team-card-header">
           <div class="team-stats">
-            <div class="stat-badge tooltip" title="Cantidad de habilidades">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <div
+              class="stat-badge tooltip"
+              title="Cantidad de habilidades"
+            >
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
               {{ team.skills.length }} Habilidades
             </div>
             <div class="stat-badge unit-count">
@@ -33,14 +82,23 @@
         </div>
         
         <div class="team-units">
-          <div class="unit-item" v-for="unit in team.units" :key="unit.name" v-tippy="translateRoles(unit.traits).join(', ')">
+          <div
+            v-for="unit in team.units"
+            :key="unit.name"
+            v-tippy="translateRoles(unit.traits).join(', ')"
+            class="unit-item"
+          >
             <!-- Asumiendo que las imagenes de unidades existen, podemos poner un placeholder o solo el nombre -->
-            <div class="unit-name">{{ unit.name }}</div>
+            <div class="unit-name">
+              {{ unit.name }}
+            </div>
           </div>
         </div>
 
         <div class="team-skills">
-          <div class="skills-label">Sinergias:</div>
+          <div class="skills-label">
+            Sinergias:
+          </div>
           <div class="skills-grid">
             <span
               v-for="skill in team.skills"

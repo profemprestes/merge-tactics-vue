@@ -2,10 +2,22 @@
   <div id="app">
     <TheHeader />
     <nav class="main-nav">
-      <router-link to="/" class="nav-link" active-class="active">Generator</router-link>
-      <router-link to="/builds" class="nav-link" active-class="active">Builds</router-link>
+      <router-link
+        to="/"
+        class="nav-link"
+        active-class="active"
+      >
+        Generator
+      </router-link>
+      <router-link
+        to="/builds"
+        class="nav-link"
+        active-class="active"
+      >
+        Builds
+      </router-link>
     </nav>
-    <router-view></router-view>
+    <router-view />
   </div>
 </template>
 
