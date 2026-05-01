@@ -5,13 +5,13 @@ import BuildsView from './views/BuildsView.vue'
 const routes = [
   {
     path: '/',
-    name: 'Generator',
-    component: GeneratorView
-  },
-  {
-    path: '/builds',
     name: 'Builds',
     component: BuildsView
+  },
+  {
+    path: '/generator',
+    name: 'Generator',
+    component: GeneratorView
   }
 ]
 
