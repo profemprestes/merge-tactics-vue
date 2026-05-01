@@ -1,71 +1,746 @@
 export const mockBuilds = [
   {
-    id: "balanced-1",
-    title: "Balanced",
-    strategy: "Defensive setup with high sustain. Focus on upgrading the main tank early.",
-    regnant: "elixirloong",
-    deck: [
-      { name: "Barbarian", image: "barbarian_mt.webp", traits: ["Clan", "Warrior"], cost: 2, stars: 2 },
-      { name: "Giant", image: "giant_mt.png", traits: ["Superstar", "Titan"], cost: 3, stars: 2 },
-      { name: "Prince", image: "prince_mt.webp", traits: ["Noble", "Warrior"], cost: 4, stars: 2 },
-      { name: "Baby Dragon", image: "babydragon_mt.png", traits: ["Dragon", "Fire"], cost: 4, stars: 2 },
-      { name: "Archer Queen", image: "archer_queen.webp", traits: ["Clan", "Superstar"], cost: 5, stars: 2 },
-      { name: "Wizard", image: "wizard_mt.png", traits: ["Hinder", "Fire"], cost: 2, stars: 2 },
-      { name: "Princess", image: "princess_mt.webp", traits: ["Noble", "Hinder"], cost: 4, stars: 2 }
+    "id": "balanced-1",
+    "title": "Balanced",
+    "strategy": "Defensive setup with high sustain. Focus on upgrading the main tank early.",
+    "regnant": "elixir_loong",
+    "deck": [
+      {
+        "name": "Barbarian",
+        "image": "barbarian_mt.webp",
+        "traits": [
+          "Clan",
+          "Warrior"
+        ],
+        "cost": 2,
+        "stars": 2
+      },
+      {
+        "name": "Giant",
+        "image": "giant_mt.png",
+        "traits": [
+          "Superstar",
+          "Titan"
+        ],
+        "cost": 3,
+        "stars": 2
+      },
+      {
+        "name": "Prince",
+        "image": "prince_mt.webp",
+        "traits": [
+          "Noble",
+          "Warrior"
+        ],
+        "cost": 4,
+        "stars": 2
+      },
+      {
+        "name": "Baby Dragon",
+        "image": "babydragon_mt.png",
+        "traits": [
+          "Dragon",
+          "Fire"
+        ],
+        "cost": 4,
+        "stars": 2
+      },
+      {
+        "name": "Archer Queen",
+        "image": "archer_queen.webp",
+        "traits": [
+          "Clan",
+          "Superstar"
+        ],
+        "cost": 5,
+        "stars": 2
+      },
+      {
+        "name": "Wizard",
+        "image": "wizard_mt.png",
+        "traits": [
+          "Hinder",
+          "Fire"
+        ],
+        "cost": 2,
+        "stars": 2
+      },
+      {
+        "name": "Princess",
+        "image": "princess_mt.webp",
+        "traits": [
+          "Noble",
+          "Hinder"
+        ],
+        "cost": 4,
+        "stars": 2
+      }
     ],
-    likes: 0,
-    date: "12h ago",
-    author: "wHYsOsERIOUS",
-    authorAvatar: "W",
-    rank: "Gold_II.png",
-    rankScore: "2185",
-    views: 96,
-    comments: 0
+    "likes": 0,
+    "date": "12h ago",
+    "author": "wHYsOsERIOUS",
+    "authorAvatar": "W",
+    "rank": "Gold_II.png",
+    "rankScore": "2185",
+    "views": 96,
+    "comments": 0
   },
   {
-    id: "cheap-clans",
-    title: "Cheap Clans",
-    strategy: "Heavy AoE damage and crowd control. Place executioner near the center.",
-    regnant: "elixirloong",
-    deck: [
-      { name: "Goblin Machine", image: "goblinmachine_mt.webp", traits: ["Superstar", "Goblin"], cost: 4, stars: 1 },
-      { name: "Valkyrie", image: "valkyrie_mt.webp", traits: ["Tank", "Clan"], cost: 3, stars: 1 },
-      { name: "Barbarian", image: "barbarian_mt.webp", traits: ["Clan", "Warrior"], cost: 2, stars: 1 },
-      { name: "Goblin Demolisher", image: "goblindemolisher_mt.png", traits: ["Goblin", "Warrior"], cost: 3, stars: 1 },
-      { name: "Archer Queen", image: "archer_queen.webp", traits: ["Clan", "Superstar"], cost: 5, stars: 1 },
-      { name: "Dart Goblin", image: "dartgoblin_mt.webp", traits: ["Goblin", "Marksman"], cost: 2, stars: 1 },
-      { name: "Archer", image: "archer_mt.webp", traits: ["Marksman", "Clan"], cost: 2, stars: 1 }
+    "id": "cheap-clans",
+    "title": "Cheap Clans",
+    "strategy": "Heavy AoE damage and crowd control. Place executioner near the center.",
+    "regnant": "elixir_loong",
+    "deck": [
+      {
+        "name": "Goblin Machine",
+        "image": "goblinmachine_mt.webp",
+        "traits": [
+          "Superstar",
+          "Goblin"
+        ],
+        "cost": 4,
+        "stars": 1
+      },
+      {
+        "name": "Valkyrie",
+        "image": "valkyrie_mt.webp",
+        "traits": [
+          "Tank",
+          "Clan"
+        ],
+        "cost": 3,
+        "stars": 1
+      },
+      {
+        "name": "Barbarian",
+        "image": "barbarian_mt.webp",
+        "traits": [
+          "Clan",
+          "Warrior"
+        ],
+        "cost": 2,
+        "stars": 1
+      },
+      {
+        "name": "Goblin Demolisher",
+        "image": "goblindemolisher_mt.png",
+        "traits": [
+          "Goblin",
+          "Warrior"
+        ],
+        "cost": 3,
+        "stars": 1
+      },
+      {
+        "name": "Archer Queen",
+        "image": "archer_queen.webp",
+        "traits": [
+          "Clan",
+          "Superstar"
+        ],
+        "cost": 5,
+        "stars": 1
+      },
+      {
+        "name": "Dart Goblin",
+        "image": "dartgoblin_mt.webp",
+        "traits": [
+          "Goblin",
+          "Marksman"
+        ],
+        "cost": 2,
+        "stars": 1
+      },
+      {
+        "name": "Archer",
+        "image": "archer_mt.webp",
+        "traits": [
+          "Marksman",
+          "Clan"
+        ],
+        "cost": 2,
+        "stars": 1
+      }
     ],
-    likes: 0,
-    date: "16h ago",
-    author: "EsTrada",
-    authorAvatar: "E",
-    rank: "Gold_III.png",
-    rankScore: "2530",
-    views: 92,
-    comments: 0
+    "likes": 0,
+    "date": "16h ago",
+    "author": "EsTrada",
+    "authorAvatar": "E",
+    "rank": "Gold_III.png",
+    "rankScore": "2530",
+    "views": 92,
+    "comments": 0
   },
   {
-    id: "009-4x-hinder-fire",
-    title: "#009 - 4x HINDER +DRAGON FIRE",
-    strategy: "Constant pressure. Keep cycling low-cost units to overwhelm.",
-    regnant: "elixirloong",
-    deck: [
-      { name: "Knight", image: "knight_mt.webp", traits: ["Tank", "Noble"], cost: 2, stars: 1 },
-      { name: "Skeleton Dragon", image: "skeletondragons_mt.png", traits: ["Undead", "Dragon"], cost: 2, stars: 1 },
-      { name: "Baby Dragon", image: "babydragon_mt.png", traits: ["Dragon", "Fire"], cost: 4, stars: 1 },
-      { name: "Executioner", image: "executioner_mt.webp", traits: ["Ace", "Hinder"], cost: 3, stars: 1 },
-      { name: "Witch", image: "witch_mt.png", traits: ["Hinder", "Undead"], cost: 4, stars: 1 },
-      { name: "Princess", image: "princess_mt.webp", traits: ["Noble", "Hinder"], cost: 4, stars: 1 },
-      { name: "Wizard", image: "wizard_mt.png", traits: ["Hinder", "Fire"], cost: 2, stars: 1 }
+    "id": "009-4x-hinder-fire",
+    "title": "#009 - 4x HINDER +DRAGON FIRE",
+    "strategy": "Constant pressure. Keep cycling low-cost units to overwhelm.",
+    "regnant": "elixir_loong",
+    "deck": [
+      {
+        "name": "Knight",
+        "image": "knight_mt.webp",
+        "traits": [
+          "Tank",
+          "Noble"
+        ],
+        "cost": 2,
+        "stars": 1
+      },
+      {
+        "name": "Skeleton Dragon",
+        "image": "skeletondragons_mt.png",
+        "traits": [
+          "Undead",
+          "Dragon"
+        ],
+        "cost": 2,
+        "stars": 1
+      },
+      {
+        "name": "Baby Dragon",
+        "image": "babydragon_mt.png",
+        "traits": [
+          "Dragon",
+          "Fire"
+        ],
+        "cost": 4,
+        "stars": 1
+      },
+      {
+        "name": "Executioner",
+        "image": "executioner_mt.webp",
+        "traits": [
+          "Ace",
+          "Hinder"
+        ],
+        "cost": 3,
+        "stars": 1
+      },
+      {
+        "name": "Witch",
+        "image": "witch_mt.png",
+        "traits": [
+          "Hinder",
+          "Undead"
+        ],
+        "cost": 4,
+        "stars": 1
+      },
+      {
+        "name": "Princess",
+        "image": "princess_mt.webp",
+        "traits": [
+          "Noble",
+          "Hinder"
+        ],
+        "cost": 4,
+        "stars": 1
+      },
+      {
+        "name": "Wizard",
+        "image": "wizard_mt.png",
+        "traits": [
+          "Hinder",
+          "Fire"
+        ],
+        "cost": 2,
+        "stars": 1
+      }
     ],
-    likes: 0,
-    date: "20h ago",
-    author: "lu1st",
-    authorAvatar: "L",
-    rank: "Silver_II.png",
-    rankScore: "1107",
-    views: 54,
-    comments: 0
+    "likes": 0,
+    "date": "20h ago",
+    "author": "lu1st",
+    "authorAvatar": "L",
+    "rank": "Silver_II.png",
+    "rankScore": "1107",
+    "views": 54,
+    "comments": 0
+  },
+  {
+    "id": "full-clanes-6",
+    "title": "Full Clanes",
+    "strategy": "Composici\u00f3n concentrada (Profundidad). Resistencia pura.",
+    "regnant": "elixir_loong",
+    "deck": [
+      {
+        "name": "Valkyrie",
+        "image": "valkyrie.png",
+        "traits": [
+          "Clan",
+          "Tank"
+        ],
+        "cost": 3,
+        "stars": 1
+      },
+      {
+        "name": "Barbarian",
+        "image": "barbarians.png",
+        "traits": [
+          "Clan",
+          "Warrior"
+        ],
+        "cost": 2,
+        "stars": 1
+      },
+      {
+        "name": "Archer Queen",
+        "image": "archer_queen.png",
+        "traits": [
+          "Clan",
+          "Superstar"
+        ],
+        "cost": 5,
+        "stars": 1
+      },
+      {
+        "name": "Archer",
+        "image": "archers.png",
+        "traits": [
+          "Clan",
+          "Marksman"
+        ],
+        "cost": 2,
+        "stars": 1
+      },
+      {
+        "name": "Giant Skeleton",
+        "image": "giant_skeleton.png",
+        "traits": [
+          "Undead",
+          "Tank"
+        ],
+        "cost": 3,
+        "stars": 1
+      },
+      {
+        "name": "Wizard",
+        "image": "wizard.png",
+        "traits": [
+          "Fire",
+          "Hinder"
+        ],
+        "cost": 2,
+        "stars": 1
+      }
+    ],
+    "likes": 0,
+    "date": "2h ago",
+    "author": "Jules",
+    "authorAvatar": "J",
+    "rank": "Gold_II.png",
+    "rankScore": "2100",
+    "views": 42,
+    "comments": 0
+  },
+  {
+    "id": "superestrellas-titanes-6",
+    "title": "Superestrellas + Titanes",
+    "strategy": "Composici\u00f3n concentrada (Profundidad). Da\u00f1o explosivo.",
+    "regnant": "elixir_loong",
+    "deck": [
+      {
+        "name": "Goblin Machine",
+        "image": "goblin_machine.png",
+        "traits": [
+          "Goblin",
+          "Superstar"
+        ],
+        "cost": 4,
+        "stars": 1
+      },
+      {
+        "name": "P.E.K.K.A.",
+        "image": "p_e_k_k_a.png",
+        "traits": [
+          "Ace",
+          "Superstar"
+        ],
+        "cost": 4,
+        "stars": 1
+      },
+      {
+        "name": "Archer Queen",
+        "image": "archer_queen.png",
+        "traits": [
+          "Clan",
+          "Superstar"
+        ],
+        "cost": 5,
+        "stars": 1
+      },
+      {
+        "name": "Musketeer",
+        "image": "musketeer.png",
+        "traits": [
+          "Noble",
+          "Marksman"
+        ],
+        "cost": 3,
+        "stars": 1
+      },
+      {
+        "name": "Giant",
+        "image": "giant.png",
+        "traits": [
+          "Titan",
+          "Superstar"
+        ],
+        "cost": 3,
+        "stars": 1
+      },
+      {
+        "name": "Royal Giant",
+        "image": "royal_giant.png",
+        "traits": [
+          "Titan",
+          "Marksman"
+        ],
+        "cost": 3,
+        "stars": 1
+      }
+    ],
+    "likes": 0,
+    "date": "3h ago",
+    "author": "Jules",
+    "authorAvatar": "J",
+    "rank": "Gold_III.png",
+    "rankScore": "2400",
+    "views": 50,
+    "comments": 0
+  },
+  {
+    "id": "sinergias-maximas-6",
+    "title": "Sinergias M\u00e1ximas (Nobles)",
+    "strategy": "Composici\u00f3n concentrada (Profundidad). Counters directos (da\u00f1o altamente reducido).",
+    "regnant": "elixir_loong",
+    "deck": [
+      {
+        "name": "Golden Knight",
+        "image": "golden_knight.png",
+        "traits": [
+          "Noble",
+          "Assassin"
+        ],
+        "cost": 5,
+        "stars": 1
+      },
+      {
+        "name": "Prince",
+        "image": "prince.png",
+        "traits": [
+          "Noble",
+          "Warrior"
+        ],
+        "cost": 4,
+        "stars": 1
+      },
+      {
+        "name": "Princess",
+        "image": "princess.png",
+        "traits": [
+          "Noble",
+          "Hinder"
+        ],
+        "cost": 4,
+        "stars": 1
+      },
+      {
+        "name": "Musketeer",
+        "image": "musketeer.png",
+        "traits": [
+          "Noble",
+          "Marksman"
+        ],
+        "cost": 3,
+        "stars": 1
+      },
+      {
+        "name": "Knight",
+        "image": "knight.png",
+        "traits": [
+          "Noble",
+          "Tank"
+        ],
+        "cost": 2,
+        "stars": 1
+      },
+      {
+        "name": "Bandit",
+        "image": "bandit.png",
+        "traits": [
+          "Ace",
+          "Assassin"
+        ],
+        "cost": 4,
+        "stars": 1
+      }
+    ],
+    "likes": 0,
+    "date": "4h ago",
+    "author": "Jules",
+    "authorAvatar": "J",
+    "rank": "Silver_I.png",
+    "rankScore": "1800",
+    "views": 35,
+    "comments": 0
+  },
+  {
+    "id": "hibrida-fuego-7",
+    "title": "H\u00edbrida de Fuego",
+    "strategy": "7 Lugares. N\u00facleo meta + Drag\u00f3n Beb\u00e9 para activar Fuego.",
+    "regnant": "elixir_loong",
+    "deck": [
+      {
+        "name": "Giant",
+        "image": "giant.png",
+        "traits": [
+          "Titan",
+          "Superstar"
+        ],
+        "cost": 3,
+        "stars": 1
+      },
+      {
+        "name": "Royal Giant",
+        "image": "royal_giant.png",
+        "traits": [
+          "Titan",
+          "Marksman"
+        ],
+        "cost": 3,
+        "stars": 1
+      },
+      {
+        "name": "Executioner",
+        "image": "executioner.png",
+        "traits": [
+          "Ace",
+          "Hinder"
+        ],
+        "cost": 3,
+        "stars": 1
+      },
+      {
+        "name": "Monk",
+        "image": "monk.png",
+        "traits": [
+          "Ace",
+          "Tank"
+        ],
+        "cost": 5,
+        "stars": 1
+      },
+      {
+        "name": "Archer Queen",
+        "image": "archer_queen.png",
+        "traits": [
+          "Clan",
+          "Superstar"
+        ],
+        "cost": 5,
+        "stars": 1
+      },
+      {
+        "name": "Wizard",
+        "image": "wizard.png",
+        "traits": [
+          "Fire",
+          "Hinder"
+        ],
+        "cost": 2,
+        "stars": 1
+      },
+      {
+        "name": "Baby Dragon",
+        "image": "baby_dragon.png",
+        "traits": [
+          "Fire",
+          "Dragon"
+        ],
+        "cost": 4,
+        "stars": 1
+      }
+    ],
+    "likes": 0,
+    "date": "5h ago",
+    "author": "Jules",
+    "authorAvatar": "J",
+    "rank": "Gold_I.png",
+    "rankScore": "2000",
+    "views": 60,
+    "comments": 0
+  },
+  {
+    "id": "artilleria-superestrellas-7",
+    "title": "Artiller\u00eda de Superestrellas Expandida",
+    "strategy": "7 Lugares. 4 Superestrellas + 2 Titanes + Princesa en retaguardia.",
+    "regnant": "elixir_loong",
+    "deck": [
+      {
+        "name": "Goblin Machine",
+        "image": "goblin_machine.png",
+        "traits": [
+          "Goblin",
+          "Superstar"
+        ],
+        "cost": 4,
+        "stars": 1
+      },
+      {
+        "name": "P.E.K.K.A.",
+        "image": "p_e_k_k_a.png",
+        "traits": [
+          "Ace",
+          "Superstar"
+        ],
+        "cost": 4,
+        "stars": 1
+      },
+      {
+        "name": "Archer Queen",
+        "image": "archer_queen.png",
+        "traits": [
+          "Clan",
+          "Superstar"
+        ],
+        "cost": 5,
+        "stars": 1
+      },
+      {
+        "name": "Musketeer",
+        "image": "musketeer.png",
+        "traits": [
+          "Noble",
+          "Marksman"
+        ],
+        "cost": 3,
+        "stars": 1
+      },
+      {
+        "name": "Giant",
+        "image": "giant.png",
+        "traits": [
+          "Titan",
+          "Superstar"
+        ],
+        "cost": 3,
+        "stars": 1
+      },
+      {
+        "name": "Royal Giant",
+        "image": "royal_giant.png",
+        "traits": [
+          "Titan",
+          "Marksman"
+        ],
+        "cost": 3,
+        "stars": 1
+      },
+      {
+        "name": "Princess",
+        "image": "princess.png",
+        "traits": [
+          "Noble",
+          "Hinder"
+        ],
+        "cost": 4,
+        "stars": 1
+      }
+    ],
+    "likes": 0,
+    "date": "6h ago",
+    "author": "Jules",
+    "authorAvatar": "J",
+    "rank": "Gold_III.png",
+    "rankScore": "2500",
+    "views": 80,
+    "comments": 0
+  },
+  {
+    "id": "exodia-defensiva-7",
+    "title": "Exodia Defensiva",
+    "strategy": "7 Lugares. N\u00facleo de da\u00f1o r\u00e1pido + Monje como escudo definitivo.",
+    "regnant": "elixir_loong",
+    "deck": [
+      {
+        "name": "Prince",
+        "image": "prince.png",
+        "traits": [
+          "Noble",
+          "Warrior"
+        ],
+        "cost": 4,
+        "stars": 1
+      },
+      {
+        "name": "Goblin Machine",
+        "image": "goblin_machine.png",
+        "traits": [
+          "Goblin",
+          "Superstar"
+        ],
+        "cost": 4,
+        "stars": 1
+      },
+      {
+        "name": "Giant Skeleton",
+        "image": "giant_skeleton.png",
+        "traits": [
+          "Undead",
+          "Tank"
+        ],
+        "cost": 3,
+        "stars": 1
+      },
+      {
+        "name": "Princess",
+        "image": "princess.png",
+        "traits": [
+          "Noble",
+          "Hinder"
+        ],
+        "cost": 4,
+        "stars": 1
+      },
+      {
+        "name": "Dart Goblin",
+        "image": "dart_goblin.png",
+        "traits": [
+          "Goblin",
+          "Marksman"
+        ],
+        "cost": 2,
+        "stars": 1
+      },
+      {
+        "name": "Archer",
+        "image": "archers.png",
+        "traits": [
+          "Clan",
+          "Marksman"
+        ],
+        "cost": 2,
+        "stars": 1
+      },
+      {
+        "name": "Monk",
+        "image": "monk.png",
+        "traits": [
+          "Ace",
+          "Tank"
+        ],
+        "cost": 5,
+        "stars": 1
+      }
+    ],
+    "likes": 0,
+    "date": "7h ago",
+    "author": "Jules",
+    "authorAvatar": "J",
+    "rank": "Gold_II.png",
+    "rankScore": "2200",
+    "views": 75,
+    "comments": 0
   }
 ];
