@@ -126,6 +126,7 @@
 <script setup>
 import { ref, reactive, computed } from 'vue';
 import { UNIT_ATTRIBUTES, SKILL_CONDITIONS, ROLE_ORDER } from '../logic.js';
+import { translateTrait, translateSkillName as utilsTranslateSkillName } from '../utils/translations.js';
 
 const props = defineProps({
   includedUnits: { type: Array, default: () => [] },
@@ -168,11 +169,11 @@ const skillsByRole = computed(() => {
 });
 
 function translateSkillName(skillName) {
-  return skillName;
+  return utilsTranslateSkillName(skillName);
 }
 
 function translateRoleName(roleName) {
-  return roleName;
+  return translateTrait(roleName);
 }
 
 function isSelected(name, category) {

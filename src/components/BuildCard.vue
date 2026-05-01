@@ -78,7 +78,7 @@
       <!-- Ruler -->
       <div class="w-20 h-28 rounded-xl bg-purple-900/50 border border-purple-500/30 overflow-hidden flex-none relative left-0 z-20 flex items-center justify-center shadow-lg">
         <!-- Placeholder for Elixir Loong / Ruler -->
-        <span class="text-xs font-bold text-center text-purple-200 px-1">{{ build.regnant }}</span>
+        <span class="text-xs font-bold text-center text-purple-200 px-1 capitalize">{{ build.regnant.replace(/_/g, ' ') }}</span>
       </div>
 
       <!-- Deck List -->
@@ -105,18 +105,18 @@
             <div
               v-if="troop.traits && troop.traits.length > 0"
               class="absolute bottom-11 -left-3 w-6 h-6 flex items-center justify-center bg-black/80 p-0.5 rounded-full text-xs text-white font-bold z-10 border border-white/10"
-              :title="troop.traits[0]"
+              :title="translateTrait(troop.traits[0])"
             >
-              {{ troop.traits[0].charAt(0) }}
+              {{ translateTrait(troop.traits[0]).charAt(0) }}
             </div>
 
             <!-- Trait 2 -->
             <div
               v-if="troop.traits && troop.traits.length > 1"
               class="absolute bottom-4 -left-3 w-6 h-6 flex items-center justify-center bg-black/80 p-0.5 rounded-full text-xs text-white font-bold z-10 border border-white/10"
-              :title="troop.traits[1]"
+              :title="translateTrait(troop.traits[1])"
             >
-              {{ troop.traits[1].charAt(0) }}
+              {{ translateTrait(troop.traits[1]).charAt(0) }}
             </div>
 
             <!-- Stars -->
@@ -136,8 +136,9 @@
             v-for="(count, trait) in buildTraitsSummary"
             :key="trait"
             class="flex flex-row gap-1 flex-none items-center pl-1.5 pr-2.5 py-0.5 mr-2 rounded bg-black/40 border border-white/5 cursor-help hover:bg-black/70 transition-colors"
+            :title="translateTrait(trait)"
           >
-            <span class="w-4 h-4 rounded-full bg-white/20 text-[9px] flex items-center justify-center font-bold">{{ trait.charAt(0) }}</span>
+            <span class="w-4 h-4 rounded-full bg-white/20 text-[9px] flex items-center justify-center font-bold">{{ translateTrait(trait).charAt(0) }}</span>
             <span class="text-sm font-semibold text-white">{{ count }}</span>
           </div>
         </div>
@@ -164,6 +165,7 @@
 <script setup>
 import { computed } from 'vue';
 import { Icon } from '@iconify/vue';
+import { translateTrait } from '../utils/translations.js';
 
 const props = defineProps({
   build: {
